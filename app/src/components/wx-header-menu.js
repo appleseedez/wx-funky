@@ -34,7 +34,7 @@ var HeaderMenu = React.createClass({
                     //},
                     {
                         'name': '婚纱纪实',
-                        'href': '#/recordVideo/record_video_list/1'
+                        'href': '#/recordVideo/wx_record_video_list/1'
                     },
                     {
                         'name': '婚照技巧',
@@ -62,7 +62,7 @@ var HeaderMenu = React.createClass({
                     },
                     {
                         name : '婚礼视频',
-                        href : '#/followVideo/weddingvideo_list/3'
+                        href : '#/followVideo/wx_weddingvideo_list/3'
                     },
                     //{
                     //    name : '选策划师',
@@ -90,15 +90,15 @@ var HeaderMenu = React.createClass({
                 'menu_5' : [
                     {
                         name : '微电影',
-                        href : '#/video/movie_latest/0'
+                        href : '#/video/wx_movie_latest/0'
                     },
                     {
                         name : '爱情MV',
-                        href : '#/video/movie_love_mv/4'
+                        href : '#/video/wx_movie_love_mv/4'
                     },
                     {
                         name : '爱情微电影',
-                        href : '#/video/movie_love_movies/5'
+                        href : '#/video/wx_movie_love_movies/5'
                     },
                     {
                         name : '表演技巧',

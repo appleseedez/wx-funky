@@ -78,7 +78,7 @@ var WXPringlesList = React.createClass({
 
         // 从菜单获取资源链接。
         var parseResource = function(){
-            self.fetchData('pringles/pringles_list',
+            self.fetchData('pringles/wx_pringles_list',
                 {
                     pageSize:self.state.pageSize,
                     pageIndex:self.state.pageIndex
@@ -88,7 +88,7 @@ var WXPringlesList = React.createClass({
                     self.setState({
                         payload:((self.state.pageIndex === 1)?payload.data : self.state.payload.concat(payload.data)),
                         pageIndex:parseInt(self.state.pageIndex)+1,
-                        baseUrl:'pringles/pringles_list',
+                        baseUrl:'pringles/wx_pringles_list',
                         totalCount:parseInt(payload.count)
                     },function(){
                         window.historyStates.states.push(self.state);
@@ -128,7 +128,7 @@ var WXPringlesList = React.createClass({
             pageIndex:1
         }
 
-        var url = 'pringles/pringles_season';
+        var url = 'pringles/wx_pringles_season';
 
         self.state.pageIndex = 1;
         $.extend(obj,params);

@@ -124,7 +124,7 @@ var WXSampleList = React.createClass({
 
         // 从菜单获取资源链接。
         var parseResource = function(){
-            self.fetchData('sample/samples_list',
+            self.fetchData('sample/wx_samples_list',
                 {
                     pageSize:self.state.pageSize,
                     pageIndex:self.state.pageIndex,
@@ -136,7 +136,7 @@ var WXSampleList = React.createClass({
                         payload:((self.state.pageIndex === 1)?payload.data : self.state.payload.concat(payload.data)),
                         pageIndex:parseInt(self.state.pageIndex)+1,
                         totalCount:parseInt(payload.count),
-                        baseUrl:'sample/samples_list',
+                        baseUrl:'sample/wx_samples_list',
                     },function(){
                         //console.log(window.historyStates.states.length,window.historyStates.states);
                         window.historyStates.states.push(self.state);

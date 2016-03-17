@@ -45,7 +45,7 @@ var WXHotelDetail = React.createClass({
                 });
             });
 
-        fetchData('adv/hotel_top')
+        fetchData('adv/wx_hotel_top')
             .done(function(payload){
                 //console.log(payload.data);
                 (payload.code === 200) &&

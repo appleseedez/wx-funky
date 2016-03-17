@@ -69,7 +69,7 @@ var WXWeddingClass = React.createClass({
         var router = self.state.router;
         var type = router[1];
         var module = router[0].split('_')[0];
-        var url = 'weddingroom/' + module + '_class_list';
+        var url = 'weddingroom/wx_' + module + '_class_list';
 
         self.fetchData(url,
             {

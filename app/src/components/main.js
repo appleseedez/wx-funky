@@ -23,7 +23,7 @@ var Main = React.createClass({
 						<li><a href='#/hotel'>婚宴预订</a></li>
 						<li><a href='#/cases'>婚庆定制</a></li>
 						<li><a href='#/weddingdress'>婚纱礼服</a></li>
-						<li><a href='#/video/movie_latest/0'>微电影</a></li>
+						<li><a href='#/video/wx_movie_latest/0'>微电影</a></li>
 						<li><a href='http://www.weihive.cn/weixin/index.php?&g=Wap&m=Product&a=index&token=ibhzwg1436836751'>婚戒钻石</a></li>
 						<li><a href='#/weddingsupplies'>婚礼用品</a></li>
 						<li><a href='#/weddingcarental'>婚车租赁</a></li>

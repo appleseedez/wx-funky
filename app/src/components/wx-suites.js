@@ -85,7 +85,7 @@ var WXPringlesList = React.createClass({
 
         // 从菜单获取资源链接。
         var parseResource = function(){
-            var url = 'suite/suite_list';
+            var url = 'suite/wx_suite_list';
 
             self.fetchData(url,
                 {

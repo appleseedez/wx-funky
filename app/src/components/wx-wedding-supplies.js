@@ -108,7 +108,7 @@ var WXWeddingSupplies = React.createClass({
         self._domControl();
 
         var parseResource = function(){
-            var url = 'weddingsupplies/supplies_list';
+            var url = 'weddingsupplies/wx_supplies_list';
 
             self.fetchData(url,self.state.params)
                 .done(function(payload){

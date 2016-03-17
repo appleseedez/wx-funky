@@ -138,7 +138,7 @@ var WXHotel = React.createClass({
 
         // 从菜单获取资源链接。
         var parseResource = function(){
-            var url = 'hotel/hotel_list';
+            var url = 'hotel/wx_hotel_list';
             var params = {
                 pageSize: self.state.pageSize,
                 pageIndex: self.state.pageIndex

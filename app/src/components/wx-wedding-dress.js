@@ -60,6 +60,17 @@ var WXWeddingDress = React.createClass({
         });
     },
 
+    getDetailedUrl:function(url,id){
+        var detailedUrl='dress_brand_top';
+        if(id === 2){
+            detailedUrl='dress_brand_female';
+        }
+        if(id === 3){
+            detailedUrl='dress_brand_male';
+        }
+
+        return url+'/'+detailedUrl;
+    },
     componentDidMount: function() {
         var self = this;
 
@@ -77,14 +88,14 @@ var WXWeddingDress = React.createClass({
 
         // 从菜单获取资源链接。
         var parseResource = function(){
-            var url = 'dressBrand/all';
+            var url = 'dress';
             var params = {
                 pageIndex:self.state.pageIndex,
                 pageSize:self.state.pageSize,
-                weddingDressType:self.state.id
+                //weddingDressType:self.state.id
             }
 
-            self.fetchData(url,params)
+            self.fetchData(this.getDetailedUrl(url,self.state.id),params)
                 .done(function(payload){
                     (payload.data && payload.code === 200) &&
                     self.setState({
@@ -135,14 +146,14 @@ var WXWeddingDress = React.createClass({
         var params = {
             pageIndex:self.state.pageIndex,
             pageSize:self.state.pageSize,
-            weddingDressType:id
+            //weddingDressType:id
         }
 
         $('.item',$screening_box).each(function(i,e){
             if($(this).hasClass('item-current')) currentCard = i;
         });
 
-        self.fetchData(url,params)
+        self.fetchData(this.getDetailedUrl(url,id),params)
             .done(function(payload){
                 (payload.data && payload.code === 200) &&
                 self.setState({

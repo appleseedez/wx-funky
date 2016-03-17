@@ -125,8 +125,8 @@ var WXScheme = React.createClass({
             };
 
             //console.log(resourceLinks);
-            (url === 'cases') && (url = url + '/scheme_list') ||
-            (url = url + '/weddingpat_list');
+            (url === 'cases') && (url = url + '/wx_scheme_list') ||
+            (url = url + '/wx_weddingpat_list');
 
             self.fetchData(url,params)
                 .done(function(payload){
