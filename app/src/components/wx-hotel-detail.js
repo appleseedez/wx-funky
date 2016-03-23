@@ -224,7 +224,7 @@ var WXHotelDetail = React.createClass({
                                                             v.dishesList || [],
                                                             function(vv,ii){
                                                                 return(
-                                                                    <dd key={ii}>{'. ' + vv}</dd>
+                                                                    <dd key={ii}>{'. ' + vv.name}</dd>
                                                                 )
                                                             }
                                                         )

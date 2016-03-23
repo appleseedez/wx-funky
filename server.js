@@ -11,6 +11,8 @@ var express=require('express'),
     // app.use(favicon(__dirname+'/dist/favicon.ico'));
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
+
+
 // mainModuleJSON
 var apiRouter = express.Router();
 
@@ -34,7 +36,5 @@ apiRouter.get('/:module/:category/:contentId',function(req,res,next){
 });
 
 app.use('/api',apiRouter);
-
-
 
 app.listen(8888);
