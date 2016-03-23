@@ -54,7 +54,7 @@ var WXPringlesList = React.createClass({
             return Api.httpGET(url,{});
         };
 
-        $slider_suite.height(2*winW/3);
+        //$slider_suite.height(2*winW/3);
 
         fetchData(self.getPath().substr(1))
             .done(function(payload){
@@ -67,16 +67,16 @@ var WXPringlesList = React.createClass({
                 //console.log(self.state.payload);
             })
 
-        fetchData('adv/wx_suite_top')
-            .done(function(payload){
-                //console.log(payload.data[0]);
-                (payload.code === 200) &&
-                self.setState({
-                    sliderData:payload.data,
-                },function(){
-                    $('#slider_box').length>0 && $('#slider_box').Slider({displayBtn:true,time:5000,device:'mobile'});
-                });
-            })
+        //fetchData('adv/wx_suite_top')
+        //    .done(function(payload){
+        //        //console.log(payload.data[0]);
+        //        (payload.code === 200) &&
+        //        self.setState({
+        //            sliderData:payload.data,
+        //        },function(){
+        //            $('#slider_box').length>0 && $('#slider_box').Slider({displayBtn:true,time:5000,device:'mobile'});
+        //        });
+        //    })
 
         $nav_conts.each(function(i){
             $(this).bind('click',function(){
@@ -102,8 +102,9 @@ var WXPringlesList = React.createClass({
         var self = this;
         var winWidth = $(window).width();
         var pageData = self.state.payload;
-        var sliderData = self.state.sliderData || [];
+        //var sliderData = self.state.sliderData || [];
         var detailList = self.state.detailList;
+        var coverUrl=pageData.coverUrlWx;
         var baseUrl = self.state.baseUrl;
         var navCont = ['详情','服务','服装','化妆品','景点','流程'];
         //var subTit = ['可自选摄影师','可自选造型师','可自选摄影师／造型师','不可自选摄影师／造型师'];
@@ -114,35 +115,39 @@ var WXPringlesList = React.createClass({
             <div className="suite-view" id='suite_view'>
                 <div className="suite-banner responsive-box" id="slider_box">
                     <div id="slider_suite" className="slider-box slider-box-1-js responsive-box">
-                        <ul className="slider">
-                            {
-                                $.map(
-                                    sliderData
-                                    ,function(v,i){
-                                        return (
-                                            <li className="item transition-opacity-1" key={i}>
-                                                <ImageListItem
-                                                    frameWidth={winWidth*2}
-                                                    url={v.coverUrlWx}
-                                                    errorUrl={'http://placehold.it/375x250'}
-                                                    mask={true}
-                                                    />
-                                            </li>
-                                        )
-                                    })
-                            }
-                        </ul>
-                        <div className='-point-box'>
-                            {
-                                $.map(
-                                    sliderData
-                                    ,function(v,i){
-                                        return (
-                                            <i key={i} className='point'></i>
-                                        )
-                                    })
-                            }
-                        </div>
+                        <img src={coverUrl}/>
+                        {
+                            //轮播多张图片时使用.
+                            //<ul className="slider">
+                            //    {
+                            //        $.map(
+                            //            sliderData
+                            //            ,function(v,i){
+                            //                return (
+                            //                    <li className="item transition-opacity-1" key={i}>
+                            //                        <ImageListItem
+                            //                            frameWidth={winWidth*2}
+                            //                            url={v.coverUrlWx}
+                            //                            errorUrl={'http://placehold.it/375x250'}
+                            //                            mask={true}
+                            //                            />
+                            //                    </li>
+                            //                )
+                            //            })
+                            //    }
+                            //</ul>
+                            //<div className='-point-box'>
+                            //    {
+                            //        $.map(
+                            //            sliderData
+                            //            ,function(v,i){
+                            //                return (
+                            //                    <i key={i} className='point'></i>
+                            //                )
+                            //            })
+                            //    }
+                            //</div>
+                        }
                     </div>
                 </div>
                 <div className='title-box clearfix'>
@@ -157,8 +162,8 @@ var WXPringlesList = React.createClass({
                     </h2>
                 </div>
                 <div className='price-box'>
-                    <span className='red-1-wxjs'>¥</span><span className='red-1-wxjs big'>{pageData.salePrice + '.00'}</span>
-                    <b className='gray-1-wxjs'>原价</b><b className='gray-1-wxjs'>{'¥' + pageData.originalPrice + '.00'}</b>
+                    <span className='red-1-wxjs'>¥</span><span className='red-1-wxjs big'>{(pageData.salePrice!=undefined?pageData.salePrice:'0') + '.00'}</span>
+                    <b className='gray-1-wxjs'>原价</b><b className='gray-1-wxjs'>{'¥' +(pageData.originalPrice!=undefined?pageData.originalPrice:'0') + '.00'}</b>
                 </div>
                 <div className='nav'>
                     <div className='nav-box' id='nav_box'>

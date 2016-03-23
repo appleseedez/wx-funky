@@ -31,7 +31,7 @@ var WXDresserPhotographerDetail = React.createClass({
 
             //console.log(payload.data);
             var pswpElement = document.querySelectorAll('.pswp')[0];
-            var imgList = JSON.parse(window.localStorage.f4ImgData);
+            var imgList = window.localStorage.f4ImgData!=undefined? JSON.parse(window.localStorage.f4ImgData):[];
             //console.log(imgList);
 
             var items = $.map(imgList || [],function(v,i){

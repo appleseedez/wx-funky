@@ -53,7 +53,7 @@ var WXTeamDetail = React.createClass({
                 },function(){
                     $('#slider_box').length>0 && $('#slider_box').Slider();
                 });
-                //console.log(payload.data[self.getParams().ind]);
+                console.log(payload.data[self.getParams().ind]);
             });
     },
 

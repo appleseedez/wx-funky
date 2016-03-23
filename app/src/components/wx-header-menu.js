@@ -224,7 +224,9 @@ var HeaderMenu = React.createClass({
             <div className="header-view navbar navbar-app navbar-absolute-top">
                 <div className="pos-box">
                     <div className="btn-rig" style={{display:'none'}}><i className="phone"><em></em></i><span>400-015-9999</span></div>
-                    <div className='glob-back' id='glob_back' style={{display:display}}><span>返回</span><i className='arrow-lef'></i></div>
+                    {
+                        //<div className='glob-back' id='glob_back' style={{display:display}}><span>返回</span><i className='arrow-lef'></i></div>
+                    }
                     <div className="btn-rig" id='contact_us'><b>联系我们</b></div>
                     <div className="navbar-brand navbar-brand-center" id="btn_menu">
                         <span>{current_menu[self.props.name].name}</span><i className="arrow-3-wxjs arrow-3-1-lef-wxjs"></i>

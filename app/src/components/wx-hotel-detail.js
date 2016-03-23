@@ -45,16 +45,16 @@ var WXHotelDetail = React.createClass({
                 });
             });
 
-        fetchData('adv/wx_hotel_top')
-            .done(function(payload){
-                //console.log(payload.data);
-                (payload.code === 200) &&
-                self.setState({
-                    sliderData:payload.data
-                },function(){
-                    $('#slider_box').length>0 && $('#slider_box').Slider({displayBtn:true,time:5000,device:'mobile'});
-                });
-            });
+        //fetchData('adv/wx_hotel_top')
+        //    .done(function(payload){
+        //        //console.log(payload.data);
+        //        (payload.code === 200) &&
+        //        self.setState({
+        //            sliderData:payload.data
+        //        },function(){
+        //            $('#slider_box').length>0 && $('#slider_box').Slider({displayBtn:true,time:5000,device:'mobile'});
+        //        });
+        //    });
     },
 
     _clickBack : function(){
@@ -120,7 +120,8 @@ var WXHotelDetail = React.createClass({
         var winWidth = $(window).width();
         var pageData = self.state.payload;
         var baseUrl = self.state.baseUrl;
-        var topSliderData = self.state.sliderData;
+        //var topSliderData = self.state.sliderData;
+        var detailImagesList = pageData.wxDetailImages != undefined ? JSON.parse(pageData.wxDetailImages) : [];
         var lableDetail = pageData.lableDetail != undefined ? JSON.parse(pageData.lableDetail) : [];
         var setMealDetail = pageData.setMealDetail != undefined ? JSON.parse(pageData.setMealDetail) : [];
         var banquetList = pageData.banquetHall || [];
@@ -139,13 +140,13 @@ var WXHotelDetail = React.createClass({
                         <ul className="slider">
                             {
                                 $.map(
-                                    topSliderData
+                                    detailImagesList
                                     ,function(v,i){
                                         return (
                                             <li className="item transition-opacity-1" key={i}>
                                                 <ImageListItem
                                                     frameWidth={winWidth}
-                                                    url={v.coverUrlWx}
+                                                    url={v}
                                                     errorUrl={'http://placehold.it/375x250'}
                                                     mask={true}
                                                     />
@@ -157,7 +158,7 @@ var WXHotelDetail = React.createClass({
                         <div className='point-box'>
                             {
                                 $.map(
-                                    topSliderData
+                                    detailImagesList
                                     ,function(v,i){
                                         return (
                                             <i key={i} className='point'></i>
@@ -197,9 +198,14 @@ var WXHotelDetail = React.createClass({
                         <p>
                             <b>所在地址：</b><span>{pageData.address}</span>
                         </p>
-                        <p>
-                            <b>{labelArr[lableDetail.length > 0 && lableDetail[0]['code']] + '：'}</b><span>{lableDetail.length > 0 && lableDetail[0]['description']}</span>
-                        </p>
+                        {
+                            $.map(lableDetail || []
+                                ,function(v,i){
+                                    return (<p>
+                                        <b>{labelArr[v.code] + '：'}</b><span>{v.description}</span>
+                                    </p>)
+                                })
+                        }
                         <p>
                             <b>酒店详情：</b><span>{pageData.introduction}</span>
                         </p>
@@ -224,7 +230,7 @@ var WXHotelDetail = React.createClass({
                                                             v.dishesList || [],
                                                             function(vv,ii){
                                                                 return(
-                                                                    <dd key={ii}>{'. ' + vv}</dd>
+                                                                    <dd key={ii}>{'. ' + vv.name}</dd>
                                                                 )
                                                             }
                                                         )

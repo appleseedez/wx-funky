@@ -25,7 +25,7 @@ var WXWeddingDressDetail = React.createClass({
     loadDetail:function(baseUrl,id,evt){
         //evt.preventDefault();
 
-        Api.httpGET(baseUrl+'/'+id,{}).done(function(payload){
+        Api.httpGET(baseUrl,{brandId:id}).done(function(payload){
             if(payload.code !== 200 || !payload.data) return;
 
             //console.log(payload.data);

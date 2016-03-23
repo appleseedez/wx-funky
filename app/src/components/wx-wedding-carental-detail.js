@@ -65,27 +65,31 @@ var WXWeddingCarRentalDetail = React.createClass({
                 self.setState({
                     payload:payload.data[0],
                     parameter:payload.data[0].parameter.split('|')
-                });
-            });
-
-        fetchData('adv/' + advUrl + '_top')
-            .done(function(payload){
-                //console.log(payload.data);
-                (payload.code === 200) &&
-                self.setState({
-                    sliderList:payload.data
                 },function(){
                     $('#slider_box').length>0 && $('#slider_box').Slider({displayBtn:true,time:5000,device:'mobile'});
                 });
             });
+
+        //fetchData('adv/' + advUrl + '_top')
+        //    .done(function(payload){
+        //        //console.log(payload.data);
+        //        (payload.code === 200) &&
+        //        self.setState({
+        //            sliderList:payload.data
+        //        },function(){
+        //            $('#slider_box').length>0 && $('#slider_box').Slider({displayBtn:true,time:5000,device:'mobile'});
+        //        });
+        //    });
     },
 
     render: function() {
         var self = this;
         var winWidth = $(window).width();
-        var sliderList = self.state.sliderList;
+        //var sliderList = self.state.sliderList;
+
         var pageData = self.state.payload;
         var parameter = self.state.parameter;
+        var detailImages =  pageData.wxDetailImages !=undefined ? JSON.parse(pageData.wxDetailImages):[];
 
         return (
             <div className="hotel-detail-view" id='hotel_detail_view'>
@@ -94,13 +98,13 @@ var WXWeddingCarRentalDetail = React.createClass({
                         <ul className="slider">
                             {
                                 $.map(
-                                    sliderList
+                                    detailImages
                                     ,function(v,i){
                                         return (
-                                            <li className='item transition-opacity-1' key={i}>
+                                            <li className="item transition-opacity-1" key={i}>
                                                 <ImageListItem
                                                     frameWidth={winWidth*2}
-                                                    url={v.coverUrlWx}
+                                                    url={v}
                                                     errorUrl={'http://placehold.it/375x250'}
                                                     mask={true}
                                                     />
@@ -112,7 +116,7 @@ var WXWeddingCarRentalDetail = React.createClass({
                         <div className='point-box'>
                             {
                                 $.map(
-                                    sliderList
+                                    detailImages
                                     ,function(v,i){
                                         return (
                                             <i key={i} className='point'></i>

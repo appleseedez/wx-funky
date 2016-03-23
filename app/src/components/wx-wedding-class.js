@@ -78,7 +78,8 @@ var WXWeddingClass = React.createClass({
                 moduleTypeId:type
             }).done(function(payload){
                 (payload.data && payload.code === 200) && self.setState({
-                    baseUrl:router[0],
+                    //baseUrl:router[0],
+                    baseUrl:url,
                     payload:payload.data,
                     totalCount:parseInt(payload.data.count)
                 },function(){
@@ -126,9 +127,9 @@ var WXWeddingClass = React.createClass({
         },5000);
         self.fetchData(url,params)
             .done(function(payload){
-                (payload.data && payload.code === 200) &&
+                (payload.data&& payload.code === 200) &&
                 self.setState({
-                    payload:self.state.payload.concat(payload.data.data),
+                    payload:self.state.payload.concat(payload.data),
                     pageIndex:parseInt(self.state.pageIndex)+1,
                     isMenuRender:false
                 });
@@ -159,7 +160,7 @@ var WXWeddingClass = React.createClass({
                                                 <span className='img-box'><img src={v.coverUrlWx} /></span>
                                                 <h1>{v.title}</h1>
                                                 <p>{v.description}</p>
-                                                <span className='time'>{v.updateTime.split(' ')[0]}</span>
+                                                <span className='time'>{v.updateTime.substr(0,10)}</span>
                                             </a>
                                         </li>
                                     )

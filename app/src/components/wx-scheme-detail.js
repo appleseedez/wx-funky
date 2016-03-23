@@ -10,7 +10,7 @@ var WXSchemeDetail = React.createClass({
     mixins:[Router.State], //我们需要知道当前的path params 等等信息
     getInitialState: function() {
         return {
-            payload:[],
+            payload:{},
             imgList:[],
             totalCount:0,
             pageSize:4,
@@ -36,7 +36,7 @@ var WXSchemeDetail = React.createClass({
                 //console.log(payload.data);
                 (payload.code === 200) &&
                 self.setState({
-                    imgList:JSON.parse(payload.data.wxDetailImages),
+                    imgList:JSON.parse(payload.data[0].wxDetailImages),
                     payload:payload.data[0]
                 })
             })
@@ -54,29 +54,62 @@ var WXSchemeDetail = React.createClass({
                         <div className="scroll-able ng-scope">
                             <div className="scroll-able-content">
                                 <section className="wedding-detail-box">
+                                    <div className="case-detail-box">
+                                        <div className="intro">
+                                            <h2>作品诠释</h2>
+                                            <p>{pageData.description}</p>
+                                        </div>
+                                        {
+                                            //<div className="person">
+                                            //    <ul className="list-4-wxjs clearfix">
+                                            //        <li className="item-box">
+                                            //            <div className="box"><a
+                                            //                className="avatar-box"><span>{pageData.theme}</span></a>
+                                            //
+                                            //                <div className="title"><h2><b>风格</b></h2></div>
+                                            //            </div>
+                                            //        </li>
+                                            //        <li className="item-box" style={{display:'none'}}>
+                                            //            <div className="box"><a
+                                            //                href={'#/scheme/style/' + (pageData.length > 0 && pageData[0].schemeStyles[0].styleId)}
+                                            //                className="avatar-box"><b><i>更多相似</i><br/><i>风格欣赏</i></b></a>
+                                            //            </div>
+                                            //        </li>
+                                            //    </ul>
+                                            //</div>
+                                        }
+                                        <div className="intro">
+                                            <h2>主题属性</h2>
+                                            <div className='content clearfix'>
+                                                <div className='item'><span>主题:</span><span>{pageData.theme}</span></div>
+                                                <div className='item'><span>风格:</span><span>{(pageData.caseStyleName!=undefined?pageData.caseStyleName.split(',')[0]:0)}</span></div>
+                                                <div className='item'><span>色系:</span><span>{pageData.color}</span></div>
+                                            </div>
+                                        </div>
+                                        <div className="intro">
+                                            <h2>价格</h2>
+                                            <div className='content clearfix'>
+                                                <div className='price'><span>折后价:</span><strong>{'￥'+(pageData.senceCost+pageData.hdpcCost)}</strong></div>
+                                                <div className='price'><span>原价:</span><strong>{'￥'+pageData.totalCost}</strong></div>
+                                                <div className='price item-full'><span>场景布置费用:</span><strong>{'￥'+pageData.senceCost}</strong></div>
+                                                <div className='price item-full'><span>婚礼人费用（主持人、造型师、摄影师、摄像师）:</span><strong>{'￥'+pageData.hdpcCost}</strong></div>
+                                            </div>
+                                        </div>
+                                        <div className="intro">
+                                            <h2>现场欣赏</h2>
+                                        </div>
+                                    </div>
                                     <ul className="ul-box">
                                         {
                                             imgList.map(function(v,i){
                                                 return (
                                                     <li className="item-box" key={i}>
-                                                        <ImageListItem url={v.url} frameWidth={winW*2} mask={true} />
+                                                        <ImageListItem url={v} frameWidth={winW*2} mask={true} />
                                                     </li>
                                                 )
                                             })
                                         }
                                     </ul>
-                                    <div className="case-detail-box">
-                                        <div className="intro">
-                                            <h2>{pageData.name}</h2>
-                                            <p>{pageData.description}</p>
-                                        </div>
-                                        <div className="person">
-                                            <ul className="list-4-wxjs clearfix">
-                                                <li className="item-box"><div className="box"><a className="avatar-box"><span>{pageData.theme}</span></a><div className="title"><h2><b>风格</b></h2></div></div></li>
-                                                <li className="item-box" style={{display:'none'}}><div className="box"><a href={'#/scheme/style/' + (pageData.length > 0 && pageData[0].schemeStyles[0].styleId)} className="avatar-box"><b><i>更多相似</i><br/><i>风格欣赏</i></b></a></div></li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                 </section>
                             </div>
                         </div>
@@ -86,7 +119,6 @@ var WXSchemeDetail = React.createClass({
 
         );
     }
-
 });
 
 module.exports = WXSchemeDetail;

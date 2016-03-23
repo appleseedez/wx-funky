@@ -60,17 +60,16 @@ var WXWeddingDress = React.createClass({
         });
     },
 
-    getDetailedUrl:function(url,id){
-        var detailedUrl='dress_brand_top';
-        if(id === 2){
-            detailedUrl='dress_brand_female';
-        }
-        if(id === 3){
-            detailedUrl='dress_brand_male';
-        }
-
-        return url+'/'+detailedUrl;
-    },
+    //getDetailedUrl:function(url,id){
+    //    var detailedUrl='dress_brand_top';
+    //    if(id === 2){
+    //        detailedUrl='dress_brand_female';
+    //    }
+    //    if(id === 3){
+    //        detailedUrl='dress_brand_male';
+    //    }
+    //    return url+'/'+detailedUrl;
+    //},
     componentDidMount: function() {
         var self = this;
 
@@ -88,14 +87,14 @@ var WXWeddingDress = React.createClass({
 
         // 从菜单获取资源链接。
         var parseResource = function(){
-            var url = 'dress';
+            var url = 'dressBrand/all';
             var params = {
                 pageIndex:self.state.pageIndex,
                 pageSize:self.state.pageSize,
-                //weddingDressType:self.state.id
+                typeId:self.state.id
             }
 
-            self.fetchData(this.getDetailedUrl(url,self.state.id),params)
+            self.fetchData(url,params)
                 .done(function(payload){
                     (payload.data && payload.code === 200) &&
                     self.setState({
@@ -146,14 +145,14 @@ var WXWeddingDress = React.createClass({
         var params = {
             pageIndex:self.state.pageIndex,
             pageSize:self.state.pageSize,
-            //weddingDressType:id
+            typeId:id
         }
 
         $('.item',$screening_box).each(function(i,e){
             if($(this).hasClass('item-current')) currentCard = i;
         });
 
-        self.fetchData(this.getDetailedUrl(url,id),params)
+        self.fetchData(url,params)
             .done(function(payload){
                 (payload.data && payload.code === 200) &&
                 self.setState({
@@ -203,9 +202,9 @@ var WXWeddingDress = React.createClass({
                                                         url={v.coverUrlWx}
                                                         sid={v.id}
                                                         detailBaseUrl={
-                                                            self.state.id === 1 && 'dress/dress_brand_top' ||
-                                                            self.state.id === 2 && 'dress/dress_brand_female' ||
-                                                            self.state.id === 3 && 'dress/dress_brand_male'
+                                                            self.state.id === 1 && 'dress/wx_dress_list' ||
+                                                            self.state.id === 2 && 'dress/wx_dress_list' ||
+                                                            self.state.id === 3 && 'dress/wx_dress_list'
                                                         }
                                                         />
                                                 </div>

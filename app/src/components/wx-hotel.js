@@ -82,7 +82,7 @@ var WXHotel = React.createClass({
 
             $(this).bind('click',function(){
                 //console.log($('ul',$(this))[0].style.display);
-                if($(this).hasClass('item-current') && $('ul',$nav_box)[ind].style.display != ('none' || '')){
+                if(!$(this).hasClass('single')&&$(this).hasClass('item-current') && $('ul',$nav_box)[ind].style.display != ('none' || '')){
                     $('ul',$nav_box).css({display:'none'});
                     return;
                 }
@@ -296,7 +296,7 @@ var WXHotel = React.createClass({
                         <span className='item'>价格</span>
                         <span className='item'>星级</span>
                         <span className='item single' onClick={function(){self.screeningClick(self.state.baseUrl,{isGift:1})}}>礼包</span>
-                        <span className='item single' onClick={function(){self.screeningClick(self.state.baseUrl,{isDisaccount:1})}}>优惠</span>
+                        <span className='item single' onClick={function(){self.screeningClick(self.state.baseUrl,{isDiscount:1})}}>优惠</span>
 
                         <ul className='clearfix' style={{display:'none'}}>
                             <li onClick={function(){self.screeningClick(self.state.baseUrl)}}>全部</li>
