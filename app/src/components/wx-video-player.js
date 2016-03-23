@@ -29,7 +29,7 @@ var WXDresserPhotographerDetail = React.createClass({
 
         window.historyStates.states.length >= 1 && $glob_back.css({display:'block'});
         $glob_back.on('click',function(){
-            self._clickBack();
+            this._clickBack();
         });
 
         //console.log($video_player.height());

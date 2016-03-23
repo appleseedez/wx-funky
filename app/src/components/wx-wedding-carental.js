@@ -109,7 +109,7 @@ var WXWeddingCarRental = React.createClass({
         self._domControl();
 
         var parseResource = function(){
-            var url = 'wedding_car/wx_car_list';
+            var url = 'car/wx_car_list';
 
             self.fetchData(url,self.state.params)
                 .done(function(payload){

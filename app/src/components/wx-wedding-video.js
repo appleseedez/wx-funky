@@ -256,7 +256,7 @@ var WXWeddingMV = React.createClass({
                                                 />
                                             <div className="title">
                                                 <span className="cn" >{v.name}</span>
-                                                <span className="en">{v.createTime}</span>
+                                                <span className="en">{v.createTime.substring(0,10)}</span>
                                             </div>
                                         </li>
                                     )

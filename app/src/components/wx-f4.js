@@ -108,7 +108,7 @@ var WXF4 = React.createClass({
         // 从菜单获取资源链接。
         var parseResource = function(){
 
-            self.fetchData('f4/wx_f4_emcee_list',
+            self.fetchData('f4/host',
                 {
                     pageSize:self.state.pageSize,
                     pageIndex:self.state.pageIndex
@@ -118,7 +118,7 @@ var WXF4 = React.createClass({
                     self.setState({
                         payload:((self.state.pageIndex === 1)?payload.data : self.state.payload.concat(payload.data)),
                         pageIndex:parseInt(self.state.pageIndex)+1,
-                        baseUrl:'f4/wx_f4_emcee_list',
+                        baseUrl:'f4/host',
                         totalCount:parseInt(payload.count)
                     },function(){
                         window.historyStates.states.push(self.state);
@@ -191,6 +191,7 @@ var WXF4 = React.createClass({
 
     scrollPos : function(box,cont,params){
         var self = this;
+        var len = window.historyStates.states.length - 1;
         if(!params) params = {
             pageSize:self.state.pageSize,
             pageIndex:self.state.pageIndex
@@ -230,7 +231,6 @@ var WXF4 = React.createClass({
                 self.setState({
                     payload:((self.state.pageIndex === 1)?payload.data : self.state.payload.concat(payload.data)),
                     pageIndex:parseInt(self.state.pageIndex)+1,
-                    currentCard:currentCard,
                     isMenuRender:false
                 },function(){
                     console.log(self.state)
@@ -275,6 +275,7 @@ var WXF4 = React.createClass({
         var storage = window.localStorage;
         var url = self.state.baseUrl.split('/')[1];
 
+        console.log(data);
         (url == 'host' || url == 'camera') &&
         (storage.f4VideoData = data) ||
         (storage.f4ImgData = data);
@@ -300,10 +301,10 @@ var WXF4 = React.createClass({
 
                 <div className='f4-list-view' id='scroll_box'>
                     <div className='screening-box' id='screening_box'>
-                        <div className='item'><span onClick={self.screeningClick.bind(self,'f4/wx_f4_emcee_list')}>主持人</span></div>
-                        <div className='item'><span onClick={self.screeningClick.bind(self,'f4/wx_f4_dresser_list')}>化妆师</span></div>
-                        <div className='item'><span onClick={self.screeningClick.bind(self,'f4/wx_f4_photographer_list')}>摄影师</span></div>
-                        <div className='item'><span onClick={self.screeningClick.bind(self,'f4/wx_f4_cameraman_list')}>摄像师</span></div>
+                        <div className='item'><span onClick={self.screeningClick.bind(self,'f4/host')}>主持人</span></div>
+                        <div className='item'><span onClick={self.screeningClick.bind(self,'f4/dresser')}>化妆师</span></div>
+                        <div className='item'><span onClick={self.screeningClick.bind(self,'f4/photographer')}>摄影师</span></div>
+                        <div className='item'><span onClick={self.screeningClick.bind(self,'f4/camera')}>摄像师</span></div>
                     </div>
                     <div className="screening-box-wx">
                         <ul className="screening-list-wx" id="style_box">

@@ -106,7 +106,7 @@ var WXPringlesList = React.createClass({
         };
 
         var seasonList = function(){
-            self.fetchData('pringlesSeason/list')
+            self.fetchData('pringlesSeason/all')
                 .done(function(payload){
                     (payload.data && payload.code === 200) &&
                     self.setState({
@@ -224,9 +224,11 @@ var WXPringlesList = React.createClass({
                             })
                         }
                     </ul>
+
                     <div className="btn-box-wx" id="btn_style">
                         <span className="btn-wx">分季</span>
                     </div>
+
                 </div>
                 <div className='scroll-box scroll-padding-50 pringles-view'>
                     <div className='hidden-box'>

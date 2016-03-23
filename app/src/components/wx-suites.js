@@ -158,7 +158,7 @@ var WXPringlesList = React.createClass({
                                                    <li key={i} className='list-item-1-wxjs'>
                                                        <div className='title-box'>
                                                            <h1 className='title'>{v.name}</h1>
-                                                           <span className='subtitle'>{'（' + v.createTime + '）'}</span>
+                                                           <span className='subtitle'>{'（' + v.createTime.substring(0,10) + '）'}</span>
                                                        </div>
                                                        <div className='img-box relative-box'>
                                                            <ImageListItem

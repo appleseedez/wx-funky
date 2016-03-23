@@ -68,9 +68,9 @@ var routes = (
 		}
     	<Route name='F4' path='f4' handler={F4} />
     	<Route name='host-detal' path='f4/host/:personId' handler={VideoPlayerDetail} />
-    	<Route name='dresser-detail' path='f4/wx_f4_dresser_list/:personId' handler={DresserPhotographerDetail} />
-    	<Route name='f4-photographer-detail' path='f4/wx_f4_photographer_list/:personId' handler={DresserPhotographerDetail} />
-    	<Route name='cameraman-detail' path='f4/wx_f4_cameraman_list/:personId' handler={VideoPlayerDetail} />
+    	<Route name='dresser-detail' path='f4/dresser/:personId' handler={DresserPhotographerDetail} />
+    	<Route name='f4-photographer-detail' path='f4/photographer/:personId' handler={DresserPhotographerDetail} />
+    	<Route name='cameraman-detail' path='f4/camera/:personId' handler={VideoPlayerDetail} />
     	<Route name='wedding-dress' path='weddingdress' handler={WeddingDress} />
     	<Route name='wedding-dress-detail' path='dress/:module/:id' handler={WeddingDressDetail} />
 		<Route name='wedding-video' path='followVideo/wx_weddingvideo_list/3' handler={WeddingVideo} />
