@@ -81,7 +81,7 @@ var WXPringlesList = React.createClass({
             self.fetchData('pringles/wx_pringles_list',
                 {
                     pageSize:self.state.pageSize,
-                    pageIndex:self.state.pageIndex
+                    pageIndex:self.state.pageIndex,
                 })
                 .done(function(payload){
                     (payload.data && payload.code === 200) &&
@@ -119,7 +119,35 @@ var WXPringlesList = React.createClass({
             .then(seasonList)
             .then(parseResource);
     },
+    //分季返回最佳客片时调用
+    selPringles:function(){
+        var self = this;
+        self.fetchData('pringles/wx_pringles_list',
+            {
+                pageSize:self.state.pageSize,
+                pageIndex:1
+            })
+            .done(function(payload){
+                (payload.data && payload.code === 200) &&
+                self.setState({
+                    payload:payload.data,
+                    pageIndex:2,
+                    baseUrl:'pringles/wx_pringles_list',
+                    totalCount:parseInt(payload.count)
+                },function(){
+                    window.historyStates.states.push(self.state);
+                });
 
+                //console.log(payload.totalCount);
+                // 绑上滚动加载。
+                //self.scrollPos($("#scroll_box"),$("#scroll_content"),
+                //    {
+                //        pageSize:self.state.pageSize,
+                //        pageIndex:self.state.pageIndex
+                //    }
+                //);
+            });
+    },
     selSeason : function(obj){
         var self = this;
         var len = window.historyStates.states.length - 1;
@@ -215,7 +243,7 @@ var WXPringlesList = React.createClass({
 
                 <div className="screening-box-wx">
                     <ul className="screening-list-wx" id="style_box">
-                        <li onClick={self.selSeason.bind(self,{})}>{'最佳客片'}</li>
+                        <li onClick={self.selPringles}>{'最佳客片'}</li>
                         {
                             $.map(quarterly || [],function(v,i){
                                 return (

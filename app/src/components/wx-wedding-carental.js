@@ -275,7 +275,7 @@ var WXWeddingCarRental = React.createClass({
                         {
                             $.map(brands,function(v,i){
                                 return(
-                                    <li key={i} onClick={self.clickFunc.bind(self,{carBrandId:v.id})}><b>{v.name}</b></li>
+                                    <li key={i} onClick={self.clickFunc.bind(self,{brandId:v.id})}><b>{v.name}</b></li>
                                 )
                             })
                         }
@@ -284,7 +284,7 @@ var WXWeddingCarRental = React.createClass({
                         {
                             $.map(models,function(v,i){
                                 return(
-                                    <li key={i} onClick={self.clickFunc.bind(self,{carModelsId:v.id})}><b>{v.name}</b></li>
+                                    <li key={i} onClick={self.clickFunc.bind(self,{modelsId:v.id})}><b>{v.name}</b></li>
                                 )
                             })
                         }

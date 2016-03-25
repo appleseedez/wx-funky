@@ -18,45 +18,7 @@ var WXHotel = React.createClass({
             baseUrl:'',
             totalCount:0,
             hotelTypes:[],
-            areas: [
-                {
-                    "id": 99,
-                    "name": "渝北区"
-                },
-                {
-                    "id": 94,
-                    "name": "南岸区"
-                },
-                {
-                    "id": 90,
-                    "name": "渝中区"
-                },{
-                    "id": 92,
-                    "name": "江北区"
-                }, {
-                    "id": 95,
-                    "name": "九龙坡区"
-                },{
-                    "id": 100,
-                    "name": "巴南区"
-                },  {
-                    "id": 91,
-                    "name": "大渡口区"
-                },  {
-                    "id": 101,
-                    "name": "北部新区"
-                },{
-                    "id": 96,
-                    "name": "北碚区"
-                }, {
-                    "id": 93,
-                    "name": "沙坪坝区"
-                },
-                {
-                    "id": 114,
-                    "name": "重庆近郊"
-                }
-            ],
+            areas: [],
             scrollTop:0,
             currentCard:0,
             itemCurrentCard:null,
@@ -165,7 +127,7 @@ var WXHotel = React.createClass({
 
         // 酒店类型
         var hotelTypes = function(){
-            self.fetchData('hotel/hotelType',{pageIndex:1,pageSize:50})
+            self.fetchData('hotelType/all',{})
                 .done(function(payload){
                     (payload.data && payload.code === 200) &&
                     self.setState({
@@ -176,10 +138,23 @@ var WXHotel = React.createClass({
                 })
         };
 
+        // 酒店类型
+        var hotelDistrict = function(){
+            self.fetchData('hotelDistrict/all',{})
+                .done(function(payload){
+                    (payload.data && payload.code === 200) &&
+                    self.setState({
+                        areas : payload.data
+                    });
+
+                    //console.log(payload);
+                })
+        };
 
         $.when({})
             .then(hotelTypes)
-            .then(parseResource);
+            .then(parseResource)
+            .then(hotelDistrict);
     },
 
     screeningClick : function(url,obj){
@@ -291,10 +266,10 @@ var WXHotel = React.createClass({
                 <WXHeaderMenu isRender={self.state.isMenuRender} menuType={'menu_2'} name={0} />
                 <div className="hotel-list">
                     <div className='nav-box' id='nav_box'>
-                        <span className='item'>位置</span>
+                        <span className='item'>区域</span>
                         <span className='item'>桌数</span>
                         <span className='item'>价格</span>
-                        <span className='item'>星级</span>
+                        <span className='item'>分类</span>
                         <span className='item single' onClick={function(){self.screeningClick(self.state.baseUrl,{isGift:1})}}>礼包</span>
                         <span className='item single' onClick={function(){self.screeningClick(self.state.baseUrl,{isDiscount:1})}}>优惠</span>
 

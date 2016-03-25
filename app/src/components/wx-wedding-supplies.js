@@ -259,7 +259,7 @@ var WXWeddingSupplies = React.createClass({
                         <span>类型</span>
                         <ul>
                             {
-                                $.map([{name:'暂无'}],function(v,i){
+                                $.map(brand,function(v,i){
                                     return(
                                         <li key={i} onClick={self.clickFunc.bind(self,{weddingSuppliesTypeId:v.id})}><b>{v.name}</b></li>
                                     )
