@@ -57,18 +57,18 @@ var WXHotelDetail = React.createClass({
         //    });
     },
 
-    _clickBack : function(){
-        var last;
-        var $glob_back = $('#glob_detail_back');
-
-        window.historyStates.isBack = true;
-        window.historyStates.states.pop();
-        last = window.historyStates.states.length - 1;
-        window.historyStates.states[last].isMenuRender = true;
-        $glob_back.off('click');
-
-        window.history.back();
-    },
+    //_clickBack : function(){
+    //    var last;
+    //    var $glob_back = $('#glob_detail_back');
+    //
+    //    window.historyStates.isBack = true;
+    //    window.historyStates.states.pop();
+    //    last = window.historyStates.states.length - 1;
+    //    window.historyStates.states[last].isMenuRender = true;
+    //    $glob_back.off('click');
+    //
+    //    window.history.back();
+    //},
 
     componentDidMount: function() {
         var self = this;
@@ -111,7 +111,7 @@ var WXHotelDetail = React.createClass({
         window.historyStates.states.length >= 1 && $glob_back.css({display:'block'});
         $glob_back.on('click',function(){
             console.log('back');
-            self._clickBack();
+            //self._clickBack();
         });
     },
 

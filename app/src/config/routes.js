@@ -84,7 +84,7 @@ var routes = (
 		<Route name='wedding-class1' path='suite_weddingclass/1' handler={WeddingClass} />
 		<Route name='wedding-class1-detail' path='weddingroom/detail/:id' handler={WeddingClassDetail} />
 		<Route name='wedding-class2' path='hotel_weddingclass/2' handler={WeddingClass} />
-		<Route name='wedding-class3' path='f4_weddingclass/3' handler={WeddingClass} />
+		<Route name='wedding-class3' path='scheme_weddingclass/3' handler={WeddingClass} />
 		<Route name='wedding-class4' path='dress_weddingclass/4' handler={WeddingClass} />
 		<Route name='wedding-class5' path='movie_weddingclass/5' handler={WeddingClass} />
 		<Route name='wedding-class7' path='supplies_weddingclass/7' handler={WeddingClass} />

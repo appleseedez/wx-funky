@@ -32,11 +32,11 @@ var WXBanquetDetail = React.createClass({
             if(payload.code !== 200 || !payload.data) return;
             var pswpElement = document.querySelectorAll('.pswp')[0];
             var imgUrls = payload.data[0].wxDetailImages !=undefined ? JSON.parse(payload.data[0].wxDetailImages) : [];
-            //console.log(imgUrls);
+            console.log(imgUrls);
 
             var items = $.map(imgUrls,function(v,i){
                 //console.log(v);
-                var dimension = v.url && v.url.split(/_(\d{1,4})x(\d{1,4})\.\w+g$/i);
+                var dimension = v && v.split(/_(\d{1,4})x(\d{1,4})\.\w+g$/i);
                 var src = v + '@watermark=1&object=c2h1aXlpbi5wbmc&t=60&p=5&y=10&x=10';
                 var w = dimension!=undefined&&dimension.length>2 ?parseInt(dimension[1]):-1;
                 var h = dimension!=undefined&&dimension.length>2 ?parseInt(dimension[2]):-1;
@@ -68,17 +68,17 @@ var WXBanquetDetail = React.createClass({
 
     },
 
-    _clickBack : function(){
-        var last;
-        var $glob_back = $('#glob_detail_back');
-
-        window.historyStates.isBack = true;
-        last = window.historyStates.states.length - 1;
-        window.historyStates.states[last].isMenuRender = true;
-        $glob_back.off('click');
-
-        window.history.back();
-    },
+    //_clickBack : function(){
+    //    var last;
+    //    var $glob_back = $('#glob_detail_back');
+    //
+    //    window.historyStates.isBack = true;
+    //    last = window.historyStates.states.length - 1;
+    //    window.historyStates.states[last].isMenuRender = true;
+    //    $glob_back.off('click');
+    //
+    //    window.history.back();
+    //},
 
     componentDidMount: function() {
         var self = this;

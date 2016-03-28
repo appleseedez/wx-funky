@@ -24,17 +24,17 @@ var WXVideoPlayer = React.createClass({
         return Api.httpGET(url,params);
     },
 
-    _clickBack : function(){
-        var last;
-        var $glob_back = $('#glob_detail_back');
-
-        window.historyStates.isBack = true;
-        last = window.historyStates.states.length - 1;
-        window.historyStates.states[last].isMenuRender = true;
-        $glob_back.off('click');
-
-        window.history.back();
-    },
+    //_clickBack : function(){
+    //    var last;
+    //    var $glob_back = $('#glob_detail_back');
+    //
+    //    window.historyStates.isBack = true;
+    //    last = window.historyStates.states.length - 1;
+    //    window.historyStates.states[last].isMenuRender = true;
+    //    $glob_back.off('click');
+    //
+    //    window.history.back();
+    //},
 
     componentDidMount: function() {
         var self = this;
@@ -47,7 +47,7 @@ var WXVideoPlayer = React.createClass({
 
         window.historyStates.states.length >= 1 && $glob_back.css({display:'block'});
         $glob_back.on('click',function(){
-            self._clickBack();
+            //self._clickBack();
         });
 
         $('.screening-box-wx').eq(0).css({display:'none'});
@@ -66,17 +66,17 @@ var WXVideoPlayer = React.createClass({
         );
     },
 
-    _clickBack : function(){
-        var last;
-        var $glob_back = $('#glob_detail_back');
-
-        window.historyStates.isBack = true;
-        last = window.historyStates.states.length - 1;
-        window.historyStates.states[last].isMenuRender = true;
-        $glob_back.off('click');
-
-        window.history.back();
-    },
+    //_clickBack : function(){
+    //    var last;
+    //    var $glob_back = $('#glob_detail_back');
+    //
+    //    window.historyStates.isBack = true;
+    //    last = window.historyStates.states.length - 1;
+    //    window.historyStates.states[last].isMenuRender = true;
+    //    $glob_back.off('click');
+    //
+    //    window.history.back();
+    //},
 
     componentWillUnmount : function(){
         $('.screening-box-wx').css({display:'block'});

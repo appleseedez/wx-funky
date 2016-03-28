@@ -74,7 +74,7 @@ var HeaderMenu = React.createClass({
                     },
                     {
                         name : '婚礼学堂',
-                        href : '#/f4_weddingclass/3'
+                        href : '#/scheme_weddingclass/3'
                     }
                 ],
                 'menu_4' : [
@@ -182,7 +182,7 @@ var HeaderMenu = React.createClass({
         });
 
         $glob_back.on('click',function(){
-            self._clickBack();
+            //self._clickBack();
         });
     },
 
@@ -191,15 +191,15 @@ var HeaderMenu = React.createClass({
         $glob_back.css({display:'none'});
     },
 
-    _clickBack : function(){
-        var last;
-        window.historyStates.isBack = true;
-        window.historyStates.states.pop();
-        last = window.historyStates.states.length - 1;
-        //console.log(window.historyStates.states);
-        window.historyStates.states[last].isMenuRender = true;
-        window.history.back();
-    },
+    //_clickBack : function(){
+    //    var last;
+    //    window.historyStates.isBack = true;
+    //    window.historyStates.states.pop();
+    //    last = window.historyStates.states.length - 1;
+    //    //console.log(window.historyStates.states);
+    //    window.historyStates.states[last].isMenuRender = true;
+    //    window.history.back();
+    //},
 
     shouldComponentUpdate : function(nextProps,nextState){
         if(nextProps.isRender === false){

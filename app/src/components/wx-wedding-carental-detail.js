@@ -28,17 +28,17 @@ var WXWeddingCarRentalDetail = React.createClass({
         return Api.httpGET(url,params);
     },
 
-    _clickBack : function(){
-        var last;
-        var $glob_back = $('#glob_detail_back');
-
-        window.historyStates.isBack = true;
-        last = window.historyStates.states.length - 1;
-        window.historyStates.states[last].isMenuRender = true;
-        $glob_back.off('click');
-
-        window.history.back();
-    },
+    //_clickBack : function(){
+    //    var last;
+    //    var $glob_back = $('#glob_detail_back');
+    //
+    //    window.historyStates.isBack = true;
+    //    last = window.historyStates.states.length - 1;
+    //    window.historyStates.states[last].isMenuRender = true;
+    //    $glob_back.off('click');
+    //
+    //    window.history.back();
+    //},
 
     componentDidMount: function() {
         var self = this;
@@ -48,7 +48,7 @@ var WXWeddingCarRentalDetail = React.createClass({
 
         window.historyStates.states.length >= 1 && $glob_back.css({display:'block'});
         $glob_back.on('click',function(){
-            self._clickBack();
+            //self._clickBack();
         });
 
         var fetchData = function(url){

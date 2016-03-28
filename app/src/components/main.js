@@ -42,15 +42,15 @@ var Main = React.createClass({
 		);
 	},
 
-	_clickBack : function(){
-		var last;
-		window.historyStates.isBack = true;
-		window.historyStates.states.pop();
-		last = window.historyStates.states.length - 1;
-		console.log(window.historyStates.states);
-		window.historyStates.states[last].isMenuRender = true;
-		window.history.back();
-	},
+	//_clickBack : function(){
+	//	var last;
+	//	window.historyStates.isBack = true;
+	//	window.historyStates.states.pop();
+	//	last = window.historyStates.states.length - 1;
+	//	console.log(window.historyStates.states);
+	//	window.historyStates.states[last].isMenuRender = true;
+	//	window.history.back();
+	//},
 
 	componentDidMount:function(){
 		var self = this;
@@ -75,7 +75,7 @@ var Main = React.createClass({
 		});
 
 		$glob_back.on('click',function(){
-			self._clickBack
+			//self._clickBack
 		});
 	}
 })

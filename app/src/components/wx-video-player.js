@@ -29,7 +29,7 @@ var WXDresserPhotographerDetail = React.createClass({
 
         window.historyStates.states.length >= 1 && $glob_back.css({display:'block'});
         $glob_back.on('click',function(){
-            this._clickBack();
+            //this._clickBack();
         });
 
         //console.log($video_player.height());
@@ -44,17 +44,17 @@ var WXDresserPhotographerDetail = React.createClass({
         //console.log($('#video_player')[0].crossOrigin);
     },
 
-    _clickBack : function(){
-        var last;
-        var $glob_back = $('#glob_detail_back');
-
-        window.historyStates.isBack = true;
-        last = window.historyStates.states.length - 1;
-        window.historyStates.states[last].isMenuRender = true;
-        $glob_back.off('click');
-
-        window.history.back();
-    },
+    //_clickBack : function(){
+    //    var last;
+    //    var $glob_back = $('#glob_detail_back');
+    //
+    //    window.historyStates.isBack = true;
+    //    last = window.historyStates.states.length - 1;
+    //    window.historyStates.states[last].isMenuRender = true;
+    //    $glob_back.off('click');
+    //
+    //    window.history.back();
+    //},
 
     render: function() {
         return (
