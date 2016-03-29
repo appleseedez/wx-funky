@@ -32,11 +32,13 @@ var Main = React.createClass({
 						<span className="btn-wx">导航</span>
 					</div>
 				</div>
-				<div className="screening-box-wx glob-back-detail" id="glob_detail_back">
-					<div className="btn-box-wx">
-						<span className="btn-wx">返回</span>
-					</div>
-				</div>
+                {
+                    //<div className="screening-box-wx glob-back-detail" id="glob_detail_back">
+                    //    <div className="btn-box-wx">
+                    //        <span className="btn-wx">返回</span>
+                    //    </div>
+                    //</div>
+                }
 				<RouteHandler />
 			</div>
 		);
