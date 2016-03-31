@@ -1,12 +1,23 @@
+//var apiUrl = function(){
+//	var config = {
+//		scheme:'http://',
+//		host:location.hostname,
+//		port:7001,
+//		endpoint:'api'
+//	};
+//	return config.scheme+ config.host + ':'
+//		+ config.port + '/' + config.endpoint + '/';
+//}
+
 var apiUrl = function(){
-	var config = {
-		scheme:'http://',
-		host:location.hostname,
-		port:7001,
-		endpoint:'api'
-	};
-	return config.scheme+ config.host + ':'
-		+ config.port + '/' + config.endpoint + '/';
+    var config = {
+        scheme:'http://',
+        host:'127.0.0.1',
+        port:'7001',
+        endpoint:'api'
+    };
+    return config.scheme+ config.host + ':'
+        + config.port + '/' + config.endpoint + '/';
 }
 
 var Api = {
