@@ -2,7 +2,7 @@ var apiUrl = function(){
 	var config = {
 		scheme:'http://',
 		host:location.hostname,
-		port:location.port,
+		port:7001,
 		endpoint:'api'
 	};
 	return config.scheme+ config.host + ':'
