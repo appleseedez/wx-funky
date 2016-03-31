@@ -12,29 +12,31 @@ var express=require('express'),
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
 
+//
+// // mainModuleJSON
+// var apiRouter = express.Router();
 
-// mainModuleJSON
-var apiRouter = express.Router();
 
+//
+// apiRouter.get('/:module/:category',function(req,res,next){
+//     //console.log(req.params);
+//     //console.log(req.query);
+//     if (req.params.category === '10021') {
+//         res.json(require('./app/test/'+req.params.module + req.params.category+req.query.pageSize*req.query.pageIndex+'.json'));
+//     }
+//
+//     res.json(require('./app/test/'+req.params.module + req.params.category+'.json'));
+//     next();
+// });
+//
+// apiRouter.get('/:module/:category/:contentId',function(req,res,next){
+//     //console.log(req.params);
+//     res.json(require('./app/test/'+req.params.module + req.params.category +req.params.contentId+'.json'));
+//     next();
+// });
+//
+// app.use('/api',apiRouter);
 
-
-apiRouter.get('/:module/:category',function(req,res,next){
-    //console.log(req.params);
-    //console.log(req.query);
-    if (req.params.category === '10021') {
-        res.json(require('./app/test/'+req.params.module + req.params.category+req.query.pageSize*req.query.pageIndex+'.json'));
-    }
-
-    res.json(require('./app/test/'+req.params.module + req.params.category+'.json'));
-    next();
+app.listen(7000,function(){
+  console.log('wx server start at 7000');
 });
-
-apiRouter.get('/:module/:category/:contentId',function(req,res,next){
-    //console.log(req.params);
-    res.json(require('./app/test/'+req.params.module + req.params.category +req.params.contentId+'.json'));
-    next();
-});
-
-app.use('/api',apiRouter);
-
-app.listen(8888);
