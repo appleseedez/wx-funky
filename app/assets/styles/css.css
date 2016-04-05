@@ -654,7 +654,7 @@ header .btn-lef .arrow-2-wxjs{margin-top:-8px;}
 .supplies-list-view .menu-classify .pos-box{width:100%;height:100%;}
 .supplies-list-view .menu-classify ul{width:100%;background-color:#fff;position:absolute;left:0;top:50px;padding:10px 0;display:none;}
 .supplies-list-view .menu-classify li{float:left;width:33.333%;text-align:center;}
-.supplies-list-view .menu-classify li b{display:block;width:80%;height:40px;border-radius:5px;overflow:hidden;font-size:16px;line-height:40px;border:none;margin:0 auto;float:none;font-weight:normal;}
+.supplies-list-view .menu-classify li b{display:block;width:100%;height:40px;border-radius:5px;overflow:hidden;font-size:16px;line-height:40px;border:none;margin:0 auto;float:none;font-weight:normal;}
 .supplies-list-view .menu-classify .li-current b{background-color:#eee;border:none;}
 .content-first-box{position:relative;}
 .car-info-box{background-color:#fff;width:100%;overflow:hidden;}

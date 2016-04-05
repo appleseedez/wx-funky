@@ -260,7 +260,7 @@ var WXHotelDetail = React.createClass({
                                                     errorUrl={'http://placehold.it/375x250'}
                                                     />
                                             </div>
-                                            <h3>{v.banquetHallName}</h3>
+                                            <h3>{v.name}</h3>
                                             <div className='info-box clearfix'>
                                                 <span className='table-num'>{'桌数：' + v.maxTableNum + '桌'}</span>
                                                 <span className='comsuption'>{'低消：' + v.lowestConsumption + '元／桌'}</span>

@@ -63,7 +63,8 @@ var WXWeddingCarRental = React.createClass({
             $('ul',$menu_classify).eq(ind - 1).css({display:'block'})
                 .siblings().removeAttr('style');
 
-            ind <= 0 && $('ul',$menu_classify).removeAttr('style');
+            ind <= 0 && $('ul',$menu_classify).removeAttr('style') &&
+            $('li',$menu_classify).removeClass('li-current');
         });
 
         $menu_classify.on('click','li',function(){
