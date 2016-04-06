@@ -82,19 +82,27 @@ var WXSchemeDetail = React.createClass({
                                             <h2>主题属性</h2>
                                             <div className='content clearfix'>
                                                 <div className='item'><span>主题:</span><span>{pageData.theme}</span></div>
-                                                <div className='item'><span>风格:</span><span>{(pageData.caseStyleName!=undefined?pageData.caseStyleName.split(',')[0]:0)}</span></div>
+                                                <div className='item'><span>风格:</span><span>{(pageData.caseStyleName!=undefined?pageData.caseStyleName.split(',')[0]:" ")}</span></div>
                                                 <div className='item'><span>色系:</span><span>{pageData.color}</span></div>
                                             </div>
                                         </div>
-                                        <div className="intro">
-                                            <h2>价格</h2>
-                                            <div className='content clearfix'>
-                                                <div className='price'><span>折后价:</span><strong>{'￥'+(pageData.senceCost+pageData.hdpcCost)}</strong></div>
-                                                <div className='price'><span>原价:</span><strong>{'￥'+pageData.totalCost}</strong></div>
-                                                <div className='price item-full'><span>场景布置费用:</span><strong>{'￥'+pageData.senceCost}</strong></div>
-                                                <div className='price item-full'><span>婚礼人费用（主持人、造型师、摄影师、摄像师）:</span><strong>{'￥'+pageData.hdpcCost}</strong></div>
-                                            </div>
-                                        </div>
+                                        {
+                                            (pageData.totalCost!=undefined&&pageData.totalCost>0) &&
+                                            (pageData.senceCost!=undefined&&pageData.senceCost>0) &&
+                                            (pageData.hdpcCost!=undefined&&pageData.hdpcCost>0) &&
+                                            (
+                                                <div className="intro">
+                                                <h2>价格</h2>
+                                                <div className='content clearfix'>
+                                                    <div className='price'><span>折后价:</span><strong>{'￥'+(pageData.senceCost+pageData.hdpcCost)}</strong></div>
+                                                    <div className='price'><span>原价:</span><strong>{'￥'+pageData.totalCost}</strong></div>
+                                                    <div className='price item-full'><span>场景布置费用:</span><strong>{'￥'+pageData.senceCost}</strong></div>
+                                                    <div className='price item-full'><span>婚礼人费用（主持人、造型师、摄影师、摄像师）:</span><strong>{'￥'+pageData.hdpcCost}</strong></div>
+                                                </div>
+                                                </div>
+                                            )
+                                        }
+
                                         <div className="intro">
                                             <h2>现场欣赏</h2>
                                         </div>
