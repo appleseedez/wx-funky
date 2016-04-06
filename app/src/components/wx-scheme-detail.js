@@ -46,7 +46,6 @@ var WXSchemeDetail = React.createClass({
         var pageData = this.state.payload;
         var imgList = this.state.imgList;
         var winW = $(window).width();
-
         return (
             <div className="app ng-scope">
                 <div className="app-body">
@@ -87,9 +86,7 @@ var WXSchemeDetail = React.createClass({
                                             </div>
                                         </div>
                                         {
-                                            (pageData.totalCost!=undefined&&pageData.totalCost>0) &&
-                                            (pageData.senceCost!=undefined&&pageData.senceCost>0) &&
-                                            (pageData.hdpcCost!=undefined&&pageData.hdpcCost>0) &&
+                                            (this.getPath().split('/')[1] != 'followPhoto') &&
                                             (
                                                 <div className="intro">
                                                 <h2>价格</h2>

@@ -386,9 +386,12 @@ var WXScheme = React.createClass({
                                                         <div className="white-block" />
                                                         <div className="info">
                                                             <h1>{v.name}</h1>
-                                                            <div className="func">
-                                                                <span className="style"><b>{(parseInt(v.totalCost) === 0)?'':'价格：¥'+parseInt(v.totalCost).toFixed(2)}</b></span>
-                                                            </div>
+                                                            {
+                                                                self.getPath().substr(1) != 'followPhoto' &&(<div className="func">
+                                                                    <span className="style"><b>{(parseInt(v.totalCost) === 0)?'':'价格：¥'+parseInt(v.totalCost).toFixed(2)}</b></span>
+                                                                </div>)
+                                                            }
+
                                                         </div>
                                                     </li>
                                                 )
