@@ -362,7 +362,7 @@ var WXF4 = React.createClass({
                                                                         )
                                                                     }
                                                                 </ul>
-                                                                <div className='price-box'><strong>报价：</strong><span>￥</span><b>{v.price}</b></div>
+                                                                <div className='price-box'><strong>报价：</strong><span>￥</span><b>{v.salePrice}</b></div>
                                                                 <p className='price-des'>{v.skillPriceRemark}</p>
                                                             </div>
                                                         </li>
