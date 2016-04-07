@@ -190,7 +190,7 @@ var WXHotelDetail = React.createClass({
                             <b>价格：</b><span>{pageData.lowestConsumption + '-' + pageData.highestConsumption +'／桌'}</span>
                         </p>
                         <p>
-                            <b>场厅数量：</b><span>{(pageData.banquetHallList || []).length + '个专用宴会厅'}</span>
+                            <b>场厅数量：</b><span>{pageData.banquetHalNum  + '个专用宴会厅'}</span>
                         </p>
                         <p>
                             <b>最大容客数：</b><span>{pageData.maxTableNum + '桌'}</span>

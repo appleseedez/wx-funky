@@ -304,10 +304,10 @@ var WXWeddingCarRental = React.createClass({
                     }
                     <ul>
                         <li onClick={self.clickFunc.bind(self,{})}><b>全部价格</b></li>
-                        <li onClick={self.clickFunc.bind(self,{priceEnd:999})}><b>1000元以下</b></li>
-                        <li onClick={self.clickFunc.bind(self,{priceStart:1000,priceEnd:2000})}><b>1000-2000元</b></li>
-                        <li onClick={self.clickFunc.bind(self,{priceStart:2000,priceEnd:3000})}><b>2000-3000元</b></li>
-                        <li onClick={self.clickFunc.bind(self,{priceStart:3001})}><b>3000元以上</b></li>
+                        <li onClick={self.clickFunc.bind(self,{maxPrice:999})}><b>1000元以下</b></li>
+                        <li onClick={self.clickFunc.bind(self,{mixPrice:1000,maxPrice:2000})}><b>1000-2000元</b></li>
+                        <li onClick={self.clickFunc.bind(self,{mixPrice:2000,maxPrice:3000})}><b>2000-3000元</b></li>
+                        <li onClick={self.clickFunc.bind(self,{mixPrice:3001})}><b>3000元以上</b></li>
                     </ul>
                     <ul>
                         <li onClick={self.clickFunc.bind(self,{carNature:1})}><b>单车</b></li>

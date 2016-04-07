@@ -172,7 +172,12 @@ var WXPringlesList = React.createClass({
                                                        <div className='info-box'>
                                                            <div className='containor clearfix'>
                                                                <div className='price'>
-                                                                   <span className='red-1-wxjs'>￥</span><span className='red-1-wxjs big'>{v.salePrice + '.00'}</span><b className='gray-1-wxjs'>原价</b><b className='gray-1-wxjs'>{'￥' + v.originalPrice + '.00'}</b>
+                                                                   <span className='red-1-wxjs'>￥</span>
+                                                                   <span className='red-1-wxjs big'>{v.salePrice + '.00'}</span>
+                                                                   {
+                                                                       //<b className='gray-1-wxjs'>原价</b>
+                                                                       //<b className='gray-1-wxjs'>{'￥' + v.originalPrice + '.00'}</b>
+                                                                   }
                                                                </div>
                                                                <a className='btn-1-wxjs' style={{display:'none'}}>立即抢购</a>
                                                            </div>
