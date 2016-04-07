@@ -44,7 +44,7 @@ var WXHome = React.createClass({
         var self = this;
 
         var parseResource = function(){
-          self.fetchData('adv/wx_index_top')
+          self.fetchData('vda/wx_index_top')
               .done(function(payload){
                   (payload.data && payload.code === 200) &&
                   self.setState({

@@ -67,7 +67,7 @@ var WXPringlesList = React.createClass({
                 //console.log(self.state.payload);
             })
 
-        //fetchData('adv/wx_suite_top')
+        //fetchData('vda/wx_suite_top')
         //    .done(function(payload){
         //        //console.log(payload.data[0]);
         //        (payload.code === 200) &&

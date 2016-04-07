@@ -70,7 +70,7 @@ var WXWeddingCarRentalDetail = React.createClass({
                 });
             });
 
-        //fetchData('adv/' + advUrl + '_top')
+        //fetchData('vda/' + advUrl + '_top')
         //    .done(function(payload){
         //        //console.log(payload.data);
         //        (payload.code === 200) &&
