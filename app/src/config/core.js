@@ -25,6 +25,7 @@
 		var self = this;
 		this.isFeching = false;
 		this.mode = (window.location.hostname.slice(0,2) === 'wx')?'online':'dev'; //开发模式
+        //this.mode = 'online'; //环境模式
 		this.resource =  {},
 		this.menu = {
 

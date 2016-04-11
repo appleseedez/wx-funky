@@ -10,7 +10,7 @@ var ImageListItem = React.createClass({
         frameHeight:PropTypes.number,
         sid:PropTypes.number,
         errorUrl:PropTypes.string,
-        detailUrl:PropTypes.string
+        detailUrl:PropTypes.string,
     },
 
     render: function() {
@@ -21,7 +21,9 @@ var ImageListItem = React.createClass({
         var scaleW = (this.props.frameWidth)? this.props.frameWidth+'w_':'';
         var scaleH = (this.props.frameHeight)? this.props.frameHeight+'h_':'';
         var water = this.props.mask === true ?'|watermark=1&object=c2h1aXlpbi5wbmc&t=60&p=5&y=10&x=10':'';
-        var url = /*(window.Core.mode === 'dev') ? this.props.url + '@' + water : */this.props.url ;// + '@' + scaleW + scaleH + '90Q' + water;
+        var url =  this.props.url + '@' + water;
+        //var url = (window.Core.mode == 'online') ? this.props.url + '@' + water : this.props.url ;// + '@' + scaleW + scaleH + '90Q' + water;
+
 
         var found = this.props.url && this.props.url.match(reg);
         var width = -1;
@@ -34,7 +36,7 @@ var ImageListItem = React.createClass({
         }
 
         var detailUrl = this.props.detailBaseUrl ? '#/'+this.props.detailBaseUrl+'/'+this.props.sid : 'javascript:void(0)';
-        //console.log(this.props.sid);
+
 
         return (
             <a href={detailUrl} style={{textAlign:'center',backgroundColor:'#fefefe'}} className="img-box" ref='RImageItem' data-width={width} data-height={height}>

@@ -635,7 +635,7 @@ header .btn-lef .arrow-2-wxjs{margin-top:-8px;}
 
 
 .samples-view .menu-classify{height:50px;position:fixed;z-index:100;left:0;top:50px;background-color:#fff;width:100%;border-bottom:1px solid #ccc;}
-.samples-view .menu-classify span{height:100%;line-height:50px;display:block;float:left;width:50%;text-align:center;color:#666;font-size:18px;}
+.samples-view .menu-classify span{height:100%;line-height:50px;display:block;float:left;width:33.33%;text-align:center;color:#666;font-size:18px;}
 .samples-view .menu-classify .item-current{background-color:#fff;border-bottom:2px solid #e93b78;}
 
 

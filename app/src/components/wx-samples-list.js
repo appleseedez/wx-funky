@@ -50,7 +50,7 @@ var WXSampleList = React.createClass({
                 $('ul',$menu_classify).removeAttr('style');
             }
 
-            ind === 1 && $('.samples-view .screening-box-wx').css({display:'none'}) || $('.samples-view .screening-box-wx').css({display:'block'})
+            ind != 0 && $('.samples-view .screening-box-wx').css({display:'none'}) || $('.samples-view .screening-box-wx').css({display:'block'})
             self.setState({currentCard:ind,isMenuRender:false});
         });
 
@@ -311,6 +311,7 @@ var WXSampleList = React.createClass({
                     <div className='menu-classify menu-classify-car clearfix'>
                         <span onClick={self.screeningFunc.bind(self,{sampleType:0})}>婚纱摄影</span>
                         <span onClick={self.screeningFunc.bind(self,{sampleType:1})}>艺术写真</span>
+                        <span onClick={self.screeningFunc.bind(self,{sampleType:2})}>全家福</span>
                     </div>
                     <div className='scroll-box scroll-padding-100'>
                         <div className='hidden-box'>
