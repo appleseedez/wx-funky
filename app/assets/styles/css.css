@@ -193,7 +193,10 @@ header .btn-lef .arrow-2-wxjs{margin-top:-8px;}
 .f4-list-view .f4-list .price-des{line-height:20px;color:#999;font-size:14px;}
 .video-player-view{height:100%;position:relative;background-color:#000;}
 .video-player-view video{/*top:50%;*/position:absolute;}
+<<<<<<< HEAD
 .video-player-view .videoPlayer{top:50%;position:absolute;}
+=======
+>>>>>>> 9ad4b753fe72e7be1d247d66493d77cccc2273b8
 
 .f4-hidden-box{width:100%;overflow:hidden;margin-top:100px;}
 .f4-hidden-box .content{width:100%;overflow:auto;height:100%;-webkit-overflow-scrolling:touch;}
