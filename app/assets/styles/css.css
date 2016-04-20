@@ -192,7 +192,7 @@ header .btn-lef .arrow-2-wxjs{margin-top:-8px;}
 .f4-list-view .f4-list .price-box strong{color:#999;font-size:16px;font-weight:normal;line-height:40px;float:left;}
 .f4-list-view .f4-list .price-des{line-height:20px;color:#999;font-size:14px;}
 .video-player-view{height:100%;position:relative;background-color:#000;}
-.video-player-view video{top:50%;position:absolute;}
+.video-player-view video{/*top:50%;*/position:absolute;}
 
 .f4-hidden-box{width:100%;overflow:hidden;margin-top:100px;}
 .f4-hidden-box .content{width:100%;overflow:auto;height:100%;-webkit-overflow-scrolling:touch;}
@@ -317,7 +317,7 @@ header .btn-lef .arrow-2-wxjs{margin-top:-8px;}
 .hotel-list .nav-box .item-current{border-bottom:2px solid #f53a7c;color:#f53a7c;}
 .hotel-list .hotel-scroll-content{margin-top:40px;margin-bottom:40px;}
 
-.hotel-scroll-content .hotel-screening-list{width:100%background-color:#fff;display:none;}
+.hotel-scroll-content .hotel-screening-list{width:100%;background-color:#fff;display:none;}
 .hotel-scroll-content .hotel-screening-list li{height:30px;}
 .hotel-scroll-content .item-box{height:100%;position:relative;}
 .hotel-scroll-content .item-box input{height:100%;width:100%;padding:9px 10px 7px 40px;color:#999;background-color:#f1f1f1;}
@@ -573,11 +573,11 @@ header .btn-lef .arrow-2-wxjs{margin-top:-8px;}
 
 
 /* ico */
-.ico-1{display:block;background-image:url(../images/ico-1.png);background-size:104px 232px;width:104px;height:116px;}
+/*.ico-1{display:block;background-image:url(../images/ico-1.png);background-size:104px 232px;width:104px;height:116px;}*/
 .ico-1-1{background-position:0 0;}
 .ico-1-2{background-position:0 -116px;}
 .ico-2{display:block;background-image:url(../images/ico-2.png);background-size:29px 32px;width:29px;height:32px;}
-.ico-3{display:block;background-image:url(../images/ico-3.png);background-size:15px 13px;width:15px;height:13px;}
+/*.ico-3{display:block;background-image:url(../images/ico-3.png);background-size:15px 13px;width:15px;height:13px;}*/
 .ico-4{display:block;background-image:url(../images/ico-4.png);background-size:18px 34px;width:18px;height:17px;}
 .ico-4-1{background-position:0 0;}
 .ico-4-2{background-position:0 -17px;}

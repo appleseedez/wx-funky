@@ -5,9 +5,9 @@ var apiUrl = function(){
 		port:location.port,
 		endpoint:'api'
 	};
-    return config.scheme+ config.host  + '/' + config.endpoint + '/';
-	//return config.scheme+ config.host + ':'
-	//	+ config.port + '/' + config.endpoint + '/';
+    //return config.scheme+ config.host  + '/' + config.endpoint + '/';
+	return config.scheme+ config.host + ':'
+		+ config.port + '/' + config.endpoint + '/';
 }
 
 //var apiUrl = function(){

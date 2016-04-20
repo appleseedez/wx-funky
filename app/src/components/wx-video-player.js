@@ -2,6 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var Router = require('react-router-ie8');
 var Api = require('../config/api.js');
+var MediaItem = require('./media-item.js');
 var SKMap = require('../config/wx-skmap.js');
 var ImageListItem = require('./image-item.js');
 
@@ -39,8 +40,8 @@ var WXDresserPhotographerDetail = React.createClass({
 
     componentWillUnmount : function(){
         $('.screening-box-wx').css({display:'block'});
-        $('#video_player')[0].load();
-        $('#video_player')[0].currentTime = 0;
+        //$('#video_player')[0].load();
+        //$('#video_player')[0].currentTime = 0;
         //console.log($('#video_player')[0].crossOrigin);
     },
 
@@ -60,13 +61,14 @@ var WXDresserPhotographerDetail = React.createClass({
         return (
             <div className="video-player-view">
                 <div style={{display:'none',position:'absolute',color:'#ffffff',zIndex:'100'}}>{window.localStorage.video}</div>
-                <video controls='controls' name="media" id='video_player'>
-                    <source src={window.localStorage.f4VideoData} type='video/mp4'/>
-                </video>
+                <MediaItem aspectRatio='-1:-1'
+                           height={"100%"}
+                           mediaUrl=""
+                           videoUrl={window.localStorage.f4VideoData}
+                />
             </div>
         );
     }
-
 });
 
 module.exports = WXDresserPhotographerDetail;
