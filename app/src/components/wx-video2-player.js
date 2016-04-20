@@ -91,14 +91,14 @@ var WXVideoPlayer = React.createClass({
 
         if(videoData.videoUrl != null)return (
             <div className="video-player-view">
-                <video controls='controls' name="media" id='video_player'>
+                <video className="videoPlayer" controls='controls' name="media" id='video_player'>
                     <source src={videoData.videoUrl} type='video/mp4'/>
                 </video>
             </div>
         )
         else return (
             <div className="video-player-view">
-                <video controls='controls' name="media" id='video_player' ></video>
+                <video className="videoPlayer" controls='controls' name="media" id='video_player' ></video>
             </div>
         )
     }

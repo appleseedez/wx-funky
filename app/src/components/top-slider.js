@@ -68,5 +68,5 @@ var TopSlider = React.createClass({
 			</ul>
 		)
 	}
-})
+});
 module.exports = TopSlider;
