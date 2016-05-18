@@ -8,6 +8,7 @@ var HeaderMenu = React.createClass({
         return {
             menu : {
                 'menu_1' : [
+
                     {
                         name : '作品欣赏',
                         href : '#/samples'
@@ -20,6 +21,10 @@ var HeaderMenu = React.createClass({
                         name : '套系报价',
                         href : '#/suite'
                     },
+                    //{
+                    //    'name': '婚纱纪实',
+                    //    'href': '#/recordVideo/wx_record_video_list/1'
+                    //},
                     {
                         name : '旅拍',
                         href : 'http://mtrip.jsbn.com'
@@ -32,24 +37,32 @@ var HeaderMenu = React.createClass({
                     //    name : '造型师',
                     //    href : '#/stylist'
                     //},
+                    //{
+                    //    'name': '婚照技巧',
+                    //    'href': '#/suite_weddingclass/1'
+                    //}
                     {
-                        'name': '婚纱纪实',
-                        'href': '#/recordVideo/wx_record_video_list/1'
+                        name : '微电影',
+                        href : '#/video/movie_list'
                     },
-                    {
-                        'name': '婚照技巧',
-                        'href': '#/suite_weddingclass/1'
-                    }
+                    //{
+                    //    name : '爱情MV',
+                    //    href : '#/video/wx_movie_love_mv/4'
+                    //},
+                    //{
+                    //    name : '爱情微电影',
+                    //    href : '#/video/wx_movie_love_movies/5'
+                    //},
                 ],
                 'menu_2' : [
                     {
                         name : '婚宴预订',
                         href : '#/hotel'
                     },
-                    {
-                        name : '婚宴知识',
-                        href : '#/hotel_weddingclass/2'
-                    }
+                    //{
+                    //    name : '婚宴知识',
+                    //    href : '#/hotel_weddingclass/2'
+                    //}
                 ],
                 'menu_3' : [
                     {
@@ -72,59 +85,71 @@ var HeaderMenu = React.createClass({
                         name : '选婚礼人',
                         href : '#/f4'
                     },
-                    {
-                        name : '婚礼学堂',
-                        href : '#/scheme_weddingclass/3'
-                    }
-                ],
-                'menu_4' : [
+                    //{
+                    //    name : '婚礼学堂',
+                    //    href : '#/scheme_weddingclass/3'
+                    //}
                     {
                         name : '婚纱礼服',
                         href : '#/weddingdress'
                     },
                     {
-                        name : '礼服知识',
-                        href : '#/dress_weddingclass/4'
-                    }
-                ],
-                'menu_5' : [
-                    {
-                        name : '微电影',
-                        href : '#/video/wx_movie_latest/0'
-                    },
-                    {
-                        name : '爱情MV',
-                        href : '#/video/wx_movie_love_mv/4'
-                    },
-                    {
-                        name : '爱情微电影',
-                        href : '#/video/wx_movie_love_movies/5'
-                    },
-                    {
-                        name : '表演技巧',
-                        href : '#/movie_weddingclass/5'
-                    }
-                ],
-                'menu_6' : [],
-                'menu_7' : [
-                    {
                         name : '婚礼用品',
                         href : '#/weddingsupplies'
                     },
                     {
-                        name : '用品贴士',
-                        href : '#/supplies_weddingclass/7'
-                    }
-                ],
-                'menu_8' : [
-                    {
                         name : '婚车租赁',
                         href : '#/weddingcarental'
                     },
-                    {
-                        name : '租车经验',
-                        href : '#/car_weddingclass/8'
-                    }
+                ],
+                'menu_4' : [
+                    //{
+                    //    name : '婚纱礼服',
+                    //    href : '#/weddingdress'
+                    //},
+                    //{
+                    //    name : '礼服知识',
+                    //    href : '#/dress_weddingclass/4'
+                    //}
+                ],
+                'menu_5' : [
+                    //{
+                    //    name : '微电影',
+                    //    href : '#/video/wx_movie_latest/0'
+                    //},
+                    //{
+                    //    name : '爱情MV',
+                    //    href : '#/video/wx_movie_love_mv/4'
+                    //},
+                    //{
+                    //    name : '爱情微电影',
+                    //    href : '#/video/wx_movie_love_movies/5'
+                    //},
+                    //{
+                    //    name : '表演技巧',
+                    //    href : '#/movie_weddingclass/5'
+                    //}
+                ],
+                'menu_6' : [],
+                'menu_7' : [
+                    //{
+                    //    name : '婚礼用品',
+                    //    href : '#/weddingsupplies'
+                    //},
+                    //{
+                    //    name : '用品贴士',
+                    //    href : '#/supplies_weddingclass/7'
+                    //}
+                ],
+                'menu_8' : [
+                    //{
+                    //    name : '婚车租赁',
+                    //    href : '#/weddingcarental'
+                    //},
+                    //{
+                    //    name : '租车经验',
+                    //    href : '#/car_weddingclass/8'
+                    //}
                 ]
             }
         }

@@ -61,6 +61,7 @@ var WXSampleDetail = React.createClass({
                 closeOnVerticalDrag:false,
                 closeOnScroll:false,
                 pinchToClose:false
+
             };
 
             // Initializes and opens PhotoSwipe

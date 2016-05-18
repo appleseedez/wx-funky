@@ -26,12 +26,18 @@ var DresserPhotographerDetail = require('../components/wx-dress-photographer-det
 var VideoPlayerDetail = require('../components/wx-video-player.js');
 var WeddingDress = require('../components/wx-wedding-dress.js');
 var WeddingDressDetail = require('../components/wx-wedding-dress-detail.js');
+
 var WeddingMV = require('../components/wx-wedding-video.js');
 var WeddingVideoDetail = require('../components/wx-video2-player.js');
 var WeddingVideo = require('../components/wx-wedding-video.js');
-var WeddingMovie = require('../components/wx-wedding-movie.js');
-var WeddingLoveMV = require('../components/wx-wedding-lovemv.js');
-var WeddingLoveMovie = require('../components/wx-wedding-lovemovie.js');
+
+var WXWeddingWeMovie = require('../components/wx-wedding-wemovie.js');
+
+//var WeddingMovie = require('../components/wx-wedding-movie.js');
+//var WeddingLoveMV = require('../components/wx-wedding-lovemv.js');
+//var WeddingLoveMovie = require('../components/wx-wedding-lovemovie.js');
+
+
 var WeddingClass = require('../components/wx-wedding-class.js');
 var WeddingClassDetail = require('../components/wx-wedding-class-detail.js');
 var WeddingPat = require('../components/wx-weddingpat.js');
@@ -75,12 +81,19 @@ var routes = (
     	<Route name='wedding-dress-detail' path='dress/:module/:id' handler={WeddingDressDetail} />
 		<Route name='wedding-video' path='followVideo/wx_weddingvideo_list/3' handler={WeddingVideo} />
 		<Route name='wedding-video-detail' path='followVideo/detail/:id' handler={WeddingVideoDetail} />
-		<Route name='wedding-movie' path='video/wx_movie_latest/0' handler={WeddingMovie} />
-		<Route name='wedding-movie-detail' path='video/detail/:id' handler={WeddingVideoDetail} />
-		<Route name='wedding-lovemv' path='video/wx_movie_love_mv/4' handler={WeddingLoveMV} />
-		<Route name='wedding-lovemv-detail' path='video/detail/:id' handler={WeddingVideoDetail} />
-		<Route name='wedding-lovemovie' path='video/wx_movie_love_movies/5' handler={WeddingLoveMovie} />
-		<Route name='wedding-lovemovie-detail' path='video/detail/:id' handler={WeddingVideoDetail} />
+
+
+        <Route name='wedding-wemovie' path='video/movie_list' handler={WXWeddingWeMovie} />
+        <Route name='wedding-wemovie-detail' path='video/detail/:id' handler={WeddingVideoDetail} />
+        {
+            //<Route name='wedding-movie' path='video/wx_movie_latest/0' handler={WeddingMovie} />
+            //<Route name='wedding-lovemv' path='video/wx_movie_love_mv/4' handler={WeddingLoveMV} />
+            //<Route name='wedding-lovemv-detail' path='video/detail/:id' handler={WeddingVideoDetail} />
+            //<Route name='wedding-lovemovie' path='video/wx_movie_love_movies/5' handler={WeddingLoveMovie} />
+            //<Route name='wedding-lovemovie-detail' path='video/detail/:id' handler={WeddingVideoDetail} />
+        }
+
+
 		<Route name='wedding-class1' path='suite_weddingclass/1' handler={WeddingClass} />
 		<Route name='wedding-class1-detail' path='weddingroom/detail/:id' handler={WeddingClassDetail} />
 		<Route name='wedding-class2' path='hotel_weddingclass/2' handler={WeddingClass} />
@@ -95,6 +108,7 @@ var routes = (
 		<Route name='wedding-supplies-detail' path='weddingsupplies/detail/:id' handler={WeddingCarRentalDetail} />
 		<Route name='wedding-carental' path='weddingcarental' handler={WeddingCarRental} />
 		<Route name='wedding-carental-detail' path='car/detail/:id' handler={WeddingCarRentalDetail} />
+
 		<DefaultRoute handler={Home} />
 	</Route>
 );

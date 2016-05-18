@@ -2,6 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var Router = require('react-router-ie8');
 var Api = require('../config/api.js');
+var MediaItem = require('./media-item.js');
 var SKMap = require('../config/wx-skmap.js');
 var ImageListItem = require('./image-item.js');
 
@@ -89,18 +90,29 @@ var WXVideoPlayer = React.createClass({
         var self = this;
         var videoData = self.state.payload || {};
 
-        if(videoData.videoUrl != null)return (
+        return (
             <div className="video-player-view">
-                <video className="videoPlayer" controls='controls' name="media" id='video_player'>
-                    <source src={videoData.videoUrl} type='video/mp4'/>
-                </video>
+                <div style={{display:'none',position:'absolute',color:'#ffffff',zIndex:'100'}}>{videoData}</div>
+                <MediaItem aspectRatio='-1:-1'
+                           height={"100%"}
+                           mediaUrl=""
+                           videoUrl={window.localStorage.f4VideoData}
+                />
             </div>
-        )
-        else return (
-            <div className="video-player-view">
-                <video className="videoPlayer" controls='controls' name="media" id='video_player' ></video>
-            </div>
-        )
+        );
+
+        //if(videoData.videoUrl != null)return (
+        //    <div className="video-player-view">
+        //        <video className="videoPlayer" controls='controls' name="media" id='video_player'>
+        //            <source src={videoData.videoUrl} type='video/mp4'/>
+        //        </video>
+        //    </div>
+        //)
+        //else return (
+        //    <div className="video-player-view">
+        //        <video className="videoPlayer" controls='controls' name="media" id='video_player' ></video>
+        //    </div>
+        //)
     }
 
 });

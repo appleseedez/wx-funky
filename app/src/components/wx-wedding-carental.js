@@ -261,7 +261,7 @@ var WXWeddingCarRental = React.createClass({
 
         return (
             <div className="supplies-list-view mobile-main-box">
-                <WXHeaderMenu menuType={'menu_8'} name={0} isRender={self.state.isMenuRender} />
+                <WXHeaderMenu menuType={'menu_3'} name={6} isRender={self.state.isMenuRender} />
 
                 <div className='menu-classify menu-classify-car clearfix'>
                     <span onClick={self.clickFunc.bind(self,{})}>全部</span>
