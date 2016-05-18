@@ -355,7 +355,7 @@ var WXScheme = React.createClass({
 
                 <div style={{display:''}} className={self.getPath() === '/cases' && 'screening-box-wx weddingpat-fj' || 'screening-box-wx'}>
                     <ul className="screening-list-wx" id="style_box">
-                        <li onClick={self.selSeason.bind(self,null)}>{'最佳案例'}</li>
+                        <li onClick={self.selSeason.bind(self,null)}>{self.getPath() === '/followPhoto' && '最佳跟拍' || '最佳案例'}</li>
                         {
                             $.map(quarterly || [],function(v,i){
                                 return (

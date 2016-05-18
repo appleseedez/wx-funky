@@ -179,7 +179,7 @@ var WXWeddingDress = React.createClass({
 
         return (
             <div className='weddindress-list-view mobile-main-box'>
-                <WXHeaderMenu menuType={'menu_4'} name={0} isRender={self.state.isMenuRender} />
+                <WXHeaderMenu menuType={'menu_3'} name={4} isRender={self.state.isMenuRender} />
 
                 <div className="weddindress-list" id="scroll_box">
                     <div className='screening-box' id='screening_box'>

@@ -251,7 +251,7 @@ var WXWeddingSupplies = React.createClass({
 
         return (
             <div className="supplies-list-view mobile-main-box">
-                <WXHeaderMenu menuType={'menu_7'} name={0} isRender={self.state.isMenuRender} />
+                <WXHeaderMenu menuType={'menu_3'} name={5} isRender={self.state.isMenuRender} />
 
                 <div className='menu-classify clearfix' id='supplies_menu'>
                     <div className='pos-box'>

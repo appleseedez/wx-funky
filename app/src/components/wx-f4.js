@@ -146,7 +146,7 @@ var WXF4 = React.createClass({
                 });
         };
         $.when({})
-            .then(fetchStyle)
+            //.then(fetchStyle)
             .then(parseResource);
 
     },

@@ -75,7 +75,7 @@ header .btn-lef .arrow-2-wxjs{margin-top:-8px;}
 .menu a:active{background-color:#030303;}
 .menu .arrow-1-wxjs{position:absolute;right:5%;top:19px;}
 .menu-home{}
-.menu-home .item{background:none;float:left;width:50%;height:25%;overflow:hidden;}
+.menu-home .item{background:none;float:left;width:100%;height:25%;overflow:hidden;}
 .menu-home .item a{display:block;position:relative;height:100%;border-top:1px solid #936e35;}
 .menu-home .item:nth-child(2n+1) a{border-right:1px solid #936e35;}
 .menu-home .item span{position:absolute;left:50%;top:50%;margin:-9px 0 0 -37px;}
@@ -172,8 +172,10 @@ header .btn-lef .arrow-2-wxjs{margin-top:-8px;}
 /* ========================= 策划师列表 ========================= */
 
 .planner-list-view{height:100%;}
-.planner-list-view .content-box{padding:50px 0 40px;}
+.planner-list-view .content-box{padding:110px 0 40px;}
 .planner-list-view .planner-list{overflow:auto;height:100%;width:100%;-webkit-overflow-scrolling:touch;}
+
+
 
 
 
@@ -643,6 +645,11 @@ header .btn-lef .arrow-2-wxjs{margin-top:-8px;}
 
 /* 婚礼纪实MV */
 .planner-list-view .list-5-wxjs{width:94%;margin:60px auto 40px;}
+.wemovie-view.planner-list-view .list-5-wxjs{width:94%;margin:20px auto;}
+
+.planner-list-view .menu-classify{height:50px;position:fixed;z-index:100;left:0;top:50px;background-color:#fff;width:100%;border-bottom:1px solid #ccc;}
+.planner-list-view .menu-classify span{height:100%;line-height:50px;display:block;float:left;width:25%;text-align:center;color:#666;font-size:14px;}
+.planner-list-view .menu-classify .item-current{background-color:#fff;border-bottom:2px solid #e93b78;}
 
 
 

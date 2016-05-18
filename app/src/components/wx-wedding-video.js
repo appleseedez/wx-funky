@@ -21,8 +21,8 @@ var WXWeddingMV = React.createClass({
             baseUrl:'',
             totalCount:0,
             quarterly:[],
-            headerCof:[0,4,1,2,1,2],    //所在菜单中的下标
-            headerType:['menu_5','menu_1','menu_3','menu_3','menu_5','menu_5'],
+            headerCof:[5,3,1,2,6,7],    //所在菜单中的下标
+            headerType:['menu_1','menu_1','menu_3','menu_3','menu_1','menu_1'],
             router:self.getPath().substr(1).split('/'),
             scrollTop:0,
             isMenuRender:true

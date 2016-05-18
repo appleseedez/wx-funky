@@ -4,7 +4,7 @@ var Router = require('react-router-ie8');
 var Api = require('../config/api.js');
 var SKMap = require('../config/wx-skmap.js');
 var ImageListItem = require('./image-item.js');
-
+var _ = require('lodash');
 var WXPringlesList = React.createClass({
     mixins:[Router.State], //我们需要知道当前的path params 等等信息
     //初始化状态。
@@ -58,12 +58,35 @@ var WXPringlesList = React.createClass({
 
         fetchData(self.getPath().substr(1))
             .done(function(payload){
+                if (payload.code === 200) {
+                    let detailImages=[];
+                    let origin = payload.data[0] != undefined && JSON.parse(payload.data[0].pcDetailImages) || [];
+                    let keys = [
+                        'pc_detailImages',
+                        'pc_serviceImages',
+                        'pc_cosmeticImages',
+                        'pc_clothShootImages',
+                        'pc_baseSampleImages',
+                        'pc_processImages'
+                    ];
 
-                (payload.code === 200) &&
-                self.setState({
-                    payload:payload.data[0],
-                    detailList:payload.data[0] != undefined && JSON.parse(payload.data[0].wxDetailImages) || {},
-                });
+                    _.each(keys, function(v) {
+                        _.each(origin[v] || [], function(v1) {
+                            detailImages.push(v1)
+                        })
+                    });
+                    console.log(detailImages);
+                    self.setState({
+                        payload:payload.data[0],
+                        detailList:detailImages
+                    });
+                }
+
+                //(payload.code === 200) &&
+                //self.setState({
+                //    payload:payload.data[0],
+                //    detailList:payload.data[0] != undefined && JSON.parse(payload.data[0].pcDetailImages) || {},
+                //});
                 //console.log(self.state.payload);
             })
 
@@ -108,106 +131,127 @@ var WXPringlesList = React.createClass({
         var baseUrl = self.state.baseUrl;
         var navCont = ['详情','服务','服装','化妆品','景点','流程'];
         //var subTit = ['可自选摄影师','可自选造型师','可自选摄影师／造型师','不可自选摄影师／造型师'];
-        var imgArr = ['wx_detailImages','wx_serviceImages','wx_clothShootImages','wx_cosmeticImages','wx_baseSampleImages','wx_processImages'];
-        //console.log(detailList['wx_detailImages']);
+        //var imgArr = ['wx_detailImages','wx_serviceImages','wx_clothShootImages','wx_cosmeticImages','wx_baseSampleImages','wx_processImages'];
 
         return (
-            <div className="suite-view" id='suite_view'>
-                <div className="suite-banner responsive-box" id="slider_box">
-                    <div id="slider_suite" className="slider-box slider-box-1-js responsive-box">
-                        <img src={coverUrl}/>
+
+                <div className="suite-view" id='suite_view'>
+
+                    <div className='discription-box' id='discription_box'>
                         {
-                            //轮播多张图片时使用.
-                            //<ul className="slider">
-                            //    {
-                            //        $.map(
-                            //            sliderData
-                            //            ,function(v,i){
-                            //                return (
-                            //                    <li className="item transition-opacity-1" key={i}>
-                            //                        <ImageListItem
-                            //                            frameWidth={winWidth*2}
-                            //                            url={v.coverUrlWx}
-                            //                            errorUrl={'http://placehold.it/375x250'}
-                            //                            mask={true}
-                            //                            />
-                            //                    </li>
-                            //                )
-                            //            })
-                            //    }
-                            //</ul>
-                            //<div className='-point-box'>
-                            //    {
-                            //        $.map(
-                            //            sliderData
-                            //            ,function(v,i){
-                            //                return (
-                            //                    <i key={i} className='point'></i>
-                            //                )
-                            //            })
-                            //    }
-                            //</div>
-                        }
-                    </div>
-                </div>
-                <div className='title-box clearfix'>
-                    <h1 className='title'>{pageData.name}</h1>
-                    <h2 className='subtitle'>
-                        {
-                            //pageData.isOptionalCameraman === 1 && pageData.isOptionalStylist === 1 && subTit[2]
-                            //|| pageData.isOptionalCameraman === 1 && subTit[0]
-                            //|| pageData.isOptionalStylist === 1 && subTit[1]
-                            //|| subTit[3]
-                        }
-                    </h2>
-                </div>
-                <div className='price-box'>
-                    <span className='red-1-wxjs'>¥</span>
-                    <span className='red-1-wxjs big'>{(pageData.salePrice!=undefined?pageData.salePrice:'0') + '.00'}</span>
-                    {
-                        //<b className='gray-1-wxjs'>原价</b>
-                        //<b className='gray-1-wxjs'>{'¥' +(pageData.originalPrice!=undefined?pageData.originalPrice:'0') + '.00'}</b>
-                    }
-                </div>
-                <div className='nav'>
-                    <div className='nav-box' id='nav_box'>
-                        {
-                            $.map(navCont,function(v,i){
-                                return(
-                                    <span key={i} className='item'><span className={i === 0 && 'cont current' || 'cont'}>{v}</span></span>
+                            $.map(detailList, function (vv, ii) {
+                                return (
+                                    <ImageListItem
+                                        key={ii}
+                                        frameWidth={winWidth*2}
+                                        url={vv}
+                                        errorUrl={'http://placehold.it/375x250'}
+                                        mask={true}
+                                    />
                                 )
                             })
                         }
                     </div>
                 </div>
-                <div className='discription-box' id='discription_box'>
-                    {
-                        $.map(imgArr, function(v,i) {
-                            return (
-                                <div key={i} className={i === 0 && 'cont current' || 'cont'}>
-                                    {
-                                        $.map(detailList[imgArr[i]] || [], function (vv, ii) {
-                                            return (
-                                                <ImageListItem
-                                                    key={i+'.'+ii}
-                                                    frameWidth={winWidth*2}
-                                                    url={vv}
-                                                    errorUrl={'http://placehold.it/375x250'}
-                                                    mask={true}
-                                                    />
-                                            )
-                                        })
-                                    }
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-                <div className='btn-fixed-bottom-box' style={{display:'none'}}>
-                    <div className='btn'><span>加入收藏</span></div><div className='btn'><span>立即抢购</span></div>
-                </div>
-            </div>
 
+                //{
+                //    //老版本
+                //    //<div className="suite-view" id='suite_view'>
+                //    //    <div className="suite-banner responsive-box" id="slider_box">
+                //    //        <div id="slider_suite" className="slider-box slider-box-1-js responsive-box">
+                //    //            <img src={coverUrl}/>
+                //    //            {
+                //    //                //轮播多张图片时使用.
+                //    //                //<ul className="slider">
+                //    //                //    {
+                //    //                //        $.map(
+                //    //                //            sliderData
+                //    //                //            ,function(v,i){
+                //    //                //                return (
+                //    //                //                    <li className="item transition-opacity-1" key={i}>
+                //    //                //                        <ImageListItem
+                //    //                //                            frameWidth={winWidth*2}
+                //    //                //                            url={v.coverUrlWx}
+                //    //                //                            errorUrl={'http://placehold.it/375x250'}
+                //    //                //                            mask={true}
+                //    //                //                            />
+                //    //                //                    </li>
+                //    //                //                )
+                //    //                //            })
+                //    //                //    }
+                //    //                //</ul>
+                //    //                //<div className='-point-box'>
+                //    //                //    {
+                //    //                //        $.map(
+                //    //                //            sliderData
+                //    //                //            ,function(v,i){
+                //    //                //                return (
+                //    //                //                    <i key={i} className='point'></i>
+                //    //                //                )
+                //    //                //            })
+                //    //                //    }
+                //    //                //</div>
+                //    //            }
+                //    //        </div>
+                //    //    </div>
+                //    //    <div className='title-box clearfix'>
+                //    //        <h1 className='title'>{pageData.name}</h1>
+                //    //        <h2 className='subtitle'>
+                //    //            {
+                //    //                //pageData.isOptionalCameraman === 1 && pageData.isOptionalStylist === 1 && subTit[2]
+                //    //                //|| pageData.isOptionalCameraman === 1 && subTit[0]
+                //    //                //|| pageData.isOptionalStylist === 1 && subTit[1]
+                //    //                //|| subTit[3]
+                //    //            }
+                //    //        </h2>
+                //    //    </div>
+                //    //    <div className='price-box'>
+                //    //        <span className='red-1-wxjs'>¥</span>
+                //    //        <span className='red-1-wxjs big'>{(pageData.salePrice!=undefined?pageData.salePrice:'0') + '.00'}</span>
+                //    //        {
+                //    //            //<b className='gray-1-wxjs'>原价</b>
+                //    //            //<b className='gray-1-wxjs'>{'¥' +(pageData.originalPrice!=undefined?pageData.originalPrice:'0') + '.00'}</b>
+                //    //        }
+                //    //    </div>
+                //    //    <div className='nav'>
+                //    //        <div className='nav-box' id='nav_box'>
+                //    //            {
+                //    //                $.map(navCont,function(v,i){
+                //    //                    return(
+                //    //                        <span key={i} className='item'><span className={i === 0 && 'cont current' || 'cont'}>{v}</span></span>
+                //    //                    )
+                //    //                })
+                //    //            }
+                //    //        </div>
+                //    //    </div>
+                //    //    <div className='discription-box' id='discription_box'>
+                //    //        {
+                //    //            $.map(imgArr, function(v,i) {
+                //    //                return (
+                //    //                    <div key={i} className={i === 0 && 'cont current' || 'cont'}>
+                //    //                        {
+                //    //                            $.map(detailList[imgArr[i]] || [], function (vv, ii) {
+                //    //                                return (
+                //    //                                    <ImageListItem
+                //    //                                        key={i+'.'+ii}
+                //    //                                        frameWidth={winWidth*2}
+                //    //                                        url={vv}
+                //    //                                        errorUrl={'http://placehold.it/375x250'}
+                //    //                                        mask={true}
+                //    //                                    />
+                //    //                                )
+                //    //                            })
+                //    //                        }
+                //    //                    </div>
+                //    //                )
+                //    //            })
+                //    //        }
+                //    //    </div>
+                //    //    <div className='btn-fixed-bottom-box' style={{display:'none'}}>
+                //    //        <div className='btn'><span>加入收藏</span></div><div className='btn'><span>立即抢购</span></div>
+                //    //    </div>
+                //    //</div>
+                //}
         );
     }
 

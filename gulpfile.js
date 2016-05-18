@@ -35,11 +35,11 @@ gulp.task('webserver', function() {
   gulp.src('./app')
     .pipe(webserver({
       host: '0.0.0.0',
-	  port:8888,
+	  port:7000,
       livereload: false
     })
   );
 });
 
-gulp.task('default', ['browserify'/*, 'watch', 'webserver'*/]);
-//gulp.task('default', ['browserify', 'watch', 'webserver']);
+//gulp.task('default', ['browserify'/*, 'watch', 'webserver'*/]);
+gulp.task('default', ['browserify', 'watch', 'webserver']);
