@@ -77,7 +77,6 @@ header .btn-lef .arrow-2-wxjs{margin-top:-8px;}
 .menu-home{}
 .menu-home .item{background:none;float:left;width:100%;height:25%;overflow:hidden;}
 .menu-home .item a{display:block;position:relative;height:100%;border-top:1px solid #936e35;}
-.menu-home .item:nth-child(2n+1) a{border-right:1px solid #936e35;}
 .menu-home .item span{position:absolute;left:50%;top:50%;margin:-9px 0 0 -37px;}
 
 .menu-1{height:320px;}

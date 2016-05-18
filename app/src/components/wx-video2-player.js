@@ -81,8 +81,8 @@ var WXVideoPlayer = React.createClass({
 
     componentWillUnmount : function(){
         $('.screening-box-wx').css({display:'block'});
-        $('#video_player')[0].load();
-        $('#video_player')[0].currentTime = 0;
+        //$('#video_player')[0].load();
+        //$('#video_player')[0].currentTime = 0;
         //console.log($('#video_player')[0].crossOrigin);
     },
 
@@ -92,20 +92,23 @@ var WXVideoPlayer = React.createClass({
 
         return (
             <div className="video-player-view">
-                <div style={{display:'none',position:'absolute',color:'#ffffff',zIndex:'100'}}>{videoData}</div>
+                <div style={{display:'none',position:'absolute',color:'#ffffff',zIndex:'100'}}>{videoData.videoUrl}</div>
                 <MediaItem aspectRatio='-1:-1'
                            height={"100%"}
                            mediaUrl=""
-                           videoUrl={window.localStorage.f4VideoData}
+                           videoUrl={videoData.videoUrl}
                 />
             </div>
         );
 
         //if(videoData.videoUrl != null)return (
         //    <div className="video-player-view">
-        //        <video className="videoPlayer" controls='controls' name="media" id='video_player'>
-        //            <source src={videoData.videoUrl} type='video/mp4'/>
-        //        </video>
+        //        <div style={{display:'none',position:'absolute',color:'#ffffff',zIndex:'100'}}>{videoData.videoUrl}</div>
+        //        <MediaItem aspectRatio='-1:-1'
+        //                   height={"100%"}
+        //                   mediaUrl=""
+        //                   videoUrl={videoData.videoUrl}
+        //        />
         //    </div>
         //)
         //else return (
