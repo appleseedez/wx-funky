@@ -191,7 +191,8 @@ var WXSampleList = React.createClass({
         var len = window.historyStates.states.length - 1;
         var params = {
             pageSize:6,
-            pageIndex:1
+            pageIndex:1,
+            sampleType:self.state.sampleType
         }
 
         self.state.pageIndex = 1;
@@ -281,7 +282,7 @@ var WXSampleList = React.createClass({
                         {
                             $.map(stylesList || [],function(v,i){
                                 return (
-                                    <li key={i} onClick={self.screeningFunc.bind(self,{shootingStyleId:v.id})}>{v.name}</li>
+                                    <li key={i} onClick={self.screeningFunc.bind(self,{shootStyleId:v.id})}>{v.name}</li>
                                 )
                             })
                         }

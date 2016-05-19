@@ -35,7 +35,7 @@ var WXDresserPhotographerDetail = React.createClass({
 
         //console.log($video_player.height());
         $video_player.css({marginTop:-$video_player.height()/2});
-        $('.screening-box-wx').eq(1).css({display:'none'});
+        $('.screening-box-wx').eq(0).css({display:'none'});
     },
 
     componentWillUnmount : function(){
