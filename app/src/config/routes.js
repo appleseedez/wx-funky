@@ -31,12 +31,11 @@ var WeddingMV = require('../components/wx-wedding-video.js');
 var WeddingVideoDetail = require('../components/wx-video2-player.js');
 var WeddingVideo = require('../components/wx-wedding-video.js');
 
-var WXWeddingWeMovie = require('../components/wx-wedding-wemovie.js');
+var WXWeddingWeMovie = require('../components/wx-wedding-wemovie.js'); //微电影
 
 //var WeddingMovie = require('../components/wx-wedding-movie.js');
 //var WeddingLoveMV = require('../components/wx-wedding-lovemv.js');
 //var WeddingLoveMovie = require('../components/wx-wedding-lovemovie.js');
-
 
 var WeddingClass = require('../components/wx-wedding-class.js');
 var WeddingClassDetail = require('../components/wx-wedding-class-detail.js');
@@ -92,7 +91,6 @@ var routes = (
             //<Route name='wedding-lovemovie' path='video/wx_movie_love_movies/5' handler={WeddingLoveMovie} />
             //<Route name='wedding-lovemovie-detail' path='video/detail/:id' handler={WeddingVideoDetail} />
         }
-
 
 		<Route name='wedding-class1' path='suite_weddingclass/1' handler={WeddingClass} />
 		<Route name='wedding-class1-detail' path='weddingroom/detail/:id' handler={WeddingClassDetail} />
