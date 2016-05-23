@@ -116,10 +116,10 @@ var WXHome = React.createClass({
                         <li className="item"><a href="#/samples"><span className="font-bg-1-wxjs font-bg-1-1-wxjs" /></a></li>
                         <li className="item"><a href='#/cases'><span className="font-bg-1-wxjs font-bg-1-3-wxjs" /></a></li>
                         <li className="item"><a href="#/hotel"><span className="font-bg-1-wxjs font-bg-1-2-wxjs" /></a></li>
-                        <li className="item"><a href='#/weddingdress'><span className="font-bg-1-wxjs font-bg-1-5-wxjs" /></a></li>
+                        <li className="item"><a href='http://www.weihive.cn/weixin/index.php?&g=Wap&m=Product&a=index&token=ibhzwg1436836751'><span className="font-bg-1-wxjs font-bg-1-5-wxjs" /></a></li>
 
                         {
-                            //<li className="item"><a href='http://www.weihive.cn/weixin/index.php?&g=Wap&m=Product&a=index&token=ibhzwg1436836751'><span className="font-bg-1-wxjs font-bg-1-5-wxjs" /></a></li>
+                            //<li className="item"><a href='#/weddingdress'><span className="font-bg-1-wxjs font-bg-1-4-wxjs" /></a></li>
                             //<li className="item"><a href='#/video/wx_movie_latest/0'><span className="font-bg-1-wxjs font-bg-1-6-wxjs" /></a></li>
                             //<li className="item"><a href='#/weddingsupplies'><span className="font-bg-1-wxjs font-bg-1-7-wxjs" /></a></li>
                             //<li className="item"><a href='#/weddingcarental'><span className="font-bg-1-wxjs font-bg-1-8-wxjs" /></a></li>

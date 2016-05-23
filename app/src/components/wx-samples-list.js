@@ -196,7 +196,7 @@ var WXSampleList = React.createClass({
         }
 
         self.state.pageIndex = 1;
-        $.extend(obj,params);
+        $.extend(params,obj);
 
         self.fetchData(self.state.baseUrl,obj)
             .done(function(payload){
